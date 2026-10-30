@@ -84,11 +84,11 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
   return (
     <aside className="w-full space-y-4">
       {/* 1. Interactive Bet Slip */}
-      <div className="bg-navy-900 rounded-2xl border border-navy-800 shadow-xl overflow-hidden">
+      <div className="bg-obsidian-900 rounded-2xl border border-cyan-500/15 shadow-xl overflow-hidden">
         {/* Bet Slip Header */}
-        <div className="bg-gradient-to-r from-navy-850 to-navy-900 p-3.5 border-b border-navy-800 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-obsidian-950 to-obsidian-900 p-3.5 border-b border-cyan-500/10 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <TrendingUp className="w-4 h-4 text-gold-400" />
+            <TrendingUp className="w-4 h-4 text-cyan-400" />
             <h3 className="text-xs font-black uppercase tracking-wider text-white">
               Exchange Bet Slip
             </h3>
@@ -96,7 +96,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
           {selectedBet && (
             <button
               onClick={onClearBet}
-              className="text-[11px] text-slate-400 hover:text-red-400 flex items-center space-x-1"
+              className="text-[11px] text-slate-400 hover:text-rose-400 flex items-center space-x-1"
             >
               <Trash2 className="w-3 h-3" />
               <span>Clear</span>
@@ -120,21 +120,21 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
               <div
                 className={`p-3 rounded-xl border ${
                   selectedBet.type === "BACK"
-                    ? "bg-blue-950/40 border-blue-600/40"
-                    : "bg-pink-950/40 border-pink-600/40"
+                    ? "bg-sky-950/40 border-sky-500/40"
+                    : "bg-rose-950/40 border-rose-500/40"
                 }`}
               >
                 <div className="flex items-center justify-between mb-1">
                   <span
                     className={`text-[10px] font-black uppercase px-2 py-0.5 rounded ${
                       selectedBet.type === "BACK"
-                        ? "bg-blue-600 text-white"
-                        : "bg-pink-600 text-white"
+                        ? "bg-sky-500 text-obsidian-950"
+                        : "bg-rose-500 text-white"
                     }`}
                   >
                     {selectedBet.type}
                   </span>
-                  <span className="text-xs font-extrabold text-gold-400">
+                  <span className="text-xs font-extrabold text-cyan-300">
                     Odds: {selectedBet.odds.toFixed(2)}
                   </span>
                 </div>
@@ -152,20 +152,20 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
                   <span>Stake Amount (₹)</span>
                   <button
                     onClick={() => setStake(0)}
-                    className="text-[10px] text-slate-400 hover:text-gold-400"
+                    className="text-[10px] text-slate-400 hover:text-cyan-400"
                   >
                     Reset
                   </button>
                 </div>
                 <div className="relative">
-                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-gold-400 font-bold text-xs">
+                  <span className="absolute left-3 top-1/2 -translate-y-1/2 text-cyan-400 font-bold text-xs">
                     ₹
                   </span>
                   <input
                     type="number"
                     value={stake}
                     onChange={(e) => setStake(Math.max(0, Number(e.target.value)))}
-                    className="w-full bg-navy-950 text-xs font-bold pl-7 pr-3 py-2 rounded-lg border border-navy-700 text-white focus:outline-none focus:border-gold-500"
+                    className="w-full bg-obsidian-950 text-xs font-bold pl-7 pr-3 py-2 rounded-xl border border-cyan-500/20 text-white focus:outline-none focus:border-cyan-400"
                   />
                 </div>
               </div>
@@ -176,7 +176,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
                   <button
                     key={chip}
                     onClick={() => handleAddStake(chip)}
-                    className="py-1 bg-navy-950 hover:bg-navy-800 text-slate-300 hover:text-gold-300 text-[10px] font-bold rounded border border-navy-800 transition-colors"
+                    className="py-1 bg-obsidian-950 hover:bg-cyan-500/20 text-slate-300 hover:text-cyan-300 text-[10px] font-bold rounded-lg border border-cyan-500/15 transition-colors"
                   >
                     +{chip >= 1000 ? `${chip / 1000}k` : chip}
                   </button>
@@ -184,7 +184,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
               </div>
 
               {/* Potential payout calculation */}
-              <div className="p-2.5 bg-navy-950 rounded-xl border border-navy-800 space-y-1 text-xs">
+              <div className="p-2.5 bg-obsidian-950 rounded-xl border border-cyan-500/15 space-y-1 text-xs">
                 <div className="flex justify-between text-slate-400">
                   <span>
                     {selectedBet.type === "BACK" ? "Potential Return:" : "Profit on Win:"}
@@ -206,22 +206,22 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
               {/* Place Bet Action Button */}
               <button
                 onClick={handlePlaceBet}
-                className="w-full py-2.5 bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-navy-950 font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-transform active:scale-95"
+                className="w-full py-2.5 brand-btn-primary font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-transform active:scale-95"
               >
                 Place Bet (₹{stake})
               </button>
             </div>
           ) : (
             <div className="py-6 text-center space-y-2">
-              <div className="w-10 h-10 rounded-full bg-navy-950 border border-navy-800 flex items-center justify-center mx-auto text-slate-500">
-                <TrendingUp className="w-5 h-5 text-slate-500" />
+              <div className="w-10 h-10 rounded-full bg-obsidian-950 border border-cyan-500/15 flex items-center justify-center mx-auto text-slate-500">
+                <TrendingUp className="w-5 h-5 text-cyan-500/60" />
               </div>
               <p className="text-xs font-semibold text-slate-300">
                 Your Bet Slip is Empty
               </p>
               <p className="text-[11px] text-slate-500 max-w-[200px] mx-auto">
-                Click any <span className="text-blue-400 font-bold">Back</span> or{" "}
-                <span className="text-pink-400 font-bold">Lay</span> odds to place a bet.
+                Click any <span className="text-sky-400 font-bold">Back</span> or{" "}
+                <span className="text-rose-400 font-bold">Lay</span> odds to place a bet.
               </p>
             </div>
           )}
@@ -229,10 +229,10 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
       </div>
 
       {/* 2. Live Winner Announcement Ticker */}
-      <div className="bg-navy-900 rounded-2xl border border-navy-800 shadow-xl overflow-hidden">
-        <div className="bg-gradient-to-r from-navy-850 to-navy-900 p-3 border-b border-navy-800 flex items-center justify-between">
+      <div className="bg-obsidian-900 rounded-2xl border border-cyan-500/15 shadow-xl overflow-hidden">
+        <div className="bg-gradient-to-r from-obsidian-950 to-obsidian-900 p-3 border-b border-cyan-500/10 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <Trophy className="w-4 h-4 text-gold-400" />
+            <Trophy className="w-4 h-4 text-cyan-400" />
             <h3 className="text-xs font-black uppercase tracking-wider text-white">
               Live Winner Announcements
             </h3>
@@ -240,11 +240,11 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
         </div>
 
-        <div className="divide-y divide-navy-800/60 max-h-64 overflow-y-auto no-scrollbar">
+        <div className="divide-y divide-cyan-500/10 max-h-64 overflow-y-auto no-scrollbar">
           {winners.map((winner) => (
             <div
               key={winner.id}
-              className="p-2.5 hover:bg-navy-800/40 transition-colors flex items-center justify-between text-xs"
+              className="p-2.5 hover:bg-obsidian-850/60 transition-colors flex items-center justify-between text-xs"
             >
               <div>
                 <div className="flex items-center space-x-1.5">
@@ -267,7 +267,7 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
       </div>
 
       {/* 3. Fast WhatsApp & Sign Up Online ID Card */}
-      <div className="p-4 rounded-2xl bg-gradient-to-br from-emerald-950 via-navy-900 to-navy-950 border border-emerald-500/40 shadow-xl text-center space-y-3">
+      <div className="p-4 rounded-2xl bg-gradient-to-br from-emerald-950/90 via-obsidian-900 to-obsidian-950 border border-emerald-500/40 shadow-xl text-center space-y-3">
         <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center mx-auto text-emerald-400">
           <MessageCircle className="w-5 h-5 fill-emerald-400" />
         </div>
@@ -282,14 +282,14 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
         <div className="space-y-2">
           <button
             onClick={onOpenWhatsApp}
-            className="w-full py-2 bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs rounded-xl shadow-md transition-all active:scale-95 flex items-center justify-center space-x-1.5"
+            className="w-full py-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-extrabold text-xs rounded-xl shadow-md transition-all active:scale-95 flex items-center justify-center space-x-1.5"
           >
             <PhoneCall className="w-3.5 h-3.5" />
             <span>Connect on WhatsApp</span>
           </button>
           <button
             onClick={onOpenSignup}
-            className="w-full py-2 bg-navy-800 hover:bg-navy-700 text-gold-300 font-bold text-xs rounded-xl border border-gold-500/30 transition-all flex items-center justify-center space-x-1.5"
+            className="w-full py-2 bg-obsidian-900 hover:bg-obsidian-850 text-cyan-300 font-bold text-xs rounded-xl border border-cyan-500/30 transition-all flex items-center justify-center space-x-1.5"
           >
             <UserPlus className="w-3.5 h-3.5" />
             <span>Create Account Online</span>

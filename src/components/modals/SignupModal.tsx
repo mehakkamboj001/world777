@@ -34,11 +34,11 @@ export const SignupModal: React.FC<SignupModalProps> = ({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-      <div className="relative w-full max-w-md bg-navy-900 rounded-3xl border border-navy-700 shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-md bg-obsidian-900 rounded-3xl border border-cyan-500/20 shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-navy-850 to-navy-900 p-5 border-b border-navy-800 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-obsidian-950 to-obsidian-900 p-5 border-b border-cyan-500/15 flex items-center justify-between">
           <div className="flex items-center space-x-2.5">
-            <div className="w-8 h-8 rounded-xl bg-gold-500/20 border border-gold-500/30 flex items-center justify-center text-gold-400 font-bold text-sm">
+            <div className="w-8 h-8 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-300 font-bold text-sm">
               777
             </div>
             <div>
@@ -48,18 +48,18 @@ export const SignupModal: React.FC<SignupModalProps> = ({
           </div>
           <button
             onClick={onClose}
-            className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-navy-800 transition-colors"
+            className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-obsidian-800 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Bonus Promotion Banner */}
-        <div className="bg-gradient-to-r from-gold-500/20 via-amber-600/20 to-gold-500/20 px-5 py-3 border-b border-gold-500/30 flex items-center space-x-3">
-          <Gift className="w-6 h-6 text-gold-400 shrink-0" />
+        <div className="bg-gradient-to-r from-cyan-500/20 via-emerald-500/20 to-teal-500/20 px-5 py-3 border-b border-cyan-500/30 flex items-center space-x-3">
+          <Gift className="w-6 h-6 text-cyan-400 shrink-0" />
           <div>
             <p className="text-xs font-black text-white">200% First Deposit Match Bonus</p>
-            <p className="text-[10px] text-gold-300">
+            <p className="text-[10px] text-cyan-200">
               Valid on minimum deposit of ₹100. Instant activation!
             </p>
           </div>
@@ -89,7 +89,7 @@ export const SignupModal: React.FC<SignupModalProps> = ({
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="e.g. Rahul Sharma"
-                    className="w-full bg-navy-950 text-xs pl-9 pr-3 py-2.5 rounded-xl border border-navy-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 transition-colors"
+                    className="w-full bg-obsidian-950 text-xs pl-9 pr-3 py-2.5 rounded-xl border border-cyan-500/20 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
                   />
                 </div>
               </div>
@@ -108,7 +108,7 @@ export const SignupModal: React.FC<SignupModalProps> = ({
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="10-digit mobile number"
-                    className="w-full bg-navy-950 text-xs pl-11 pr-3 py-2.5 rounded-xl border border-navy-700 text-white placeholder-slate-500 focus:outline-none focus:border-gold-500 transition-colors"
+                    className="w-full bg-obsidian-950 text-xs pl-11 pr-3 py-2.5 rounded-xl border border-cyan-500/20 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400 transition-colors"
                   />
                 </div>
               </div>
@@ -120,14 +120,14 @@ export const SignupModal: React.FC<SignupModalProps> = ({
 
               <button
                 type="submit"
-                className="w-full py-3 bg-gradient-to-r from-gold-500 to-amber-600 hover:from-gold-400 hover:to-amber-500 text-navy-950 font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-transform active:scale-95"
+                className="w-full py-3 brand-btn-primary font-black text-xs uppercase tracking-wider rounded-xl shadow-lg transition-transform active:scale-95"
               >
                 Get Online ID & Claim Bonus
               </button>
 
               <div className="relative flex items-center justify-center pt-2">
-                <div className="border-t border-navy-800 w-full" />
-                <span className="bg-navy-900 px-3 text-[11px] text-slate-500 uppercase font-semibold absolute">
+                <div className="border-t border-cyan-500/10 w-full" />
+                <span className="bg-obsidian-900 px-3 text-[11px] text-slate-500 uppercase font-semibold absolute">
                   or get faster via
                 </span>
               </div>
@@ -138,7 +138,7 @@ export const SignupModal: React.FC<SignupModalProps> = ({
                   onClose();
                   onOpenWhatsApp();
                 }}
-                className="w-full py-2.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs rounded-xl flex items-center justify-center space-x-2 shadow transition-all"
+                className="w-full py-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs rounded-xl flex items-center justify-center space-x-2 shadow transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>Instant 1-Click WhatsApp Registration</span>
@@ -152,7 +152,7 @@ export const SignupModal: React.FC<SignupModalProps> = ({
                     onClose();
                     onOpenLogin();
                   }}
-                  className="text-gold-400 font-bold hover:underline"
+                  className="text-cyan-400 font-bold hover:underline"
                 >
                   Login Here
                 </button>
@@ -164,4 +164,3 @@ export const SignupModal: React.FC<SignupModalProps> = ({
     </div>
   );
 };
-

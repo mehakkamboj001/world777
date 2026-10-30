@@ -39,17 +39,17 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md animate-in fade-in">
-      <div className="relative w-full max-w-2xl bg-navy-900 rounded-3xl border border-gold-500/30 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
+      <div className="relative w-full max-w-2xl bg-obsidian-900 rounded-3xl border border-cyan-500/25 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
         {/* Header */}
-        <div className="bg-gradient-to-r from-navy-850 via-navy-900 to-navy-850 p-5 border-b border-navy-800 flex items-center justify-between shrink-0">
+        <div className="bg-gradient-to-r from-obsidian-950 via-obsidian-900 to-obsidian-950 p-5 border-b border-cyan-500/15 flex items-center justify-between shrink-0">
           <div className="flex items-center space-x-3">
-            <div className="w-9 h-9 rounded-xl bg-gold-500/20 border border-gold-500/40 flex items-center justify-center text-gold-400">
+            <div className="w-9 h-9 rounded-xl bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-cyan-300">
               <Sliders className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center space-x-2">
                 <h3 className="text-base font-extrabold text-white">SEO Management Suite</h3>
-                <span className="text-[10px] bg-emerald-500/20 text-emerald-400 px-2 py-0.5 rounded-full font-bold border border-emerald-500/30">
+                <span className="text-[10px] bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded-full font-bold border border-emerald-500/30">
                   SEO SCORE 100/100
                 </span>
               </div>
@@ -60,19 +60,19 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
           </div>
           <button
             onClick={onClose}
-            className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-navy-800 transition-colors"
+            className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-obsidian-800 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Tab navigation */}
-        <div className="flex border-b border-navy-800 bg-navy-950 px-4 py-2 space-x-2 overflow-x-auto no-scrollbar shrink-0">
+        <div className="flex border-b border-cyan-500/15 bg-obsidian-950 px-4 py-2 space-x-2 overflow-x-auto no-scrollbar shrink-0">
           <button
             onClick={() => setActiveTab("serp")}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
               activeTab === "serp"
-                ? "bg-navy-800 text-gold-300 border border-gold-500/30"
+                ? "bg-obsidian-850 text-cyan-300 border border-cyan-500/30 shadow-sm"
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -81,9 +81,9 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
           </button>
           <button
             onClick={() => setActiveTab("og")}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
               activeTab === "og"
-                ? "bg-navy-800 text-gold-300 border border-gold-500/30"
+                ? "bg-obsidian-850 text-cyan-300 border border-cyan-500/30 shadow-sm"
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -92,9 +92,9 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
           </button>
           <button
             onClick={() => setActiveTab("keywords")}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
               activeTab === "keywords"
-                ? "bg-navy-800 text-gold-300 border border-gold-500/30"
+                ? "bg-obsidian-850 text-cyan-300 border border-cyan-500/30 shadow-sm"
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -103,9 +103,9 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
           </button>
           <button
             onClick={() => setActiveTab("schema")}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
               activeTab === "schema"
-                ? "bg-navy-800 text-gold-300 border border-gold-500/30"
+                ? "bg-obsidian-850 text-cyan-300 border border-cyan-500/30 shadow-sm"
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -114,9 +114,9 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
           </button>
           <button
             onClick={() => setActiveTab("routes")}
-            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-lg text-xs font-bold transition-all whitespace-nowrap ${
+            className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-bold transition-all whitespace-nowrap ${
               activeTab === "routes"
-                ? "bg-navy-800 text-gold-300 border border-gold-500/30"
+                ? "bg-obsidian-850 text-cyan-300 border border-cyan-500/30 shadow-sm"
                 : "text-slate-400 hover:text-white"
             }`}
           >
@@ -132,7 +132,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
             <div className="space-y-4">
               <div className="p-5 bg-white text-slate-800 rounded-2xl shadow-md border border-slate-200">
                 <div className="flex items-center space-x-2 text-[11px] text-slate-600 mb-1">
-                  <div className="w-4 h-4 rounded-full bg-amber-500 flex items-center justify-center text-white text-[9px] font-black">
+                  <div className="w-4 h-4 rounded-full bg-cyan-600 flex items-center justify-center text-white text-[9px] font-black">
                     W
                   </div>
                   <span className="font-medium">world777.com.in</span>
@@ -148,7 +148,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
                 {/* SERP Sitelinks */}
                 <div className="mt-3 pt-3 border-t border-slate-100 grid grid-cols-2 gap-2 text-xs">
                   <div>
-                    <span className="text-blue-700 font-medium">Get Online Cricket ID</span>
+                    <span className="text-blue-700 font-medium">Get World 777 Online ID</span>
                     <p className="text-[10px] text-slate-500">2-minute setup via WhatsApp</p>
                   </div>
                   <div>
@@ -159,7 +159,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
               </div>
 
               {/* Meta Checklist */}
-              <div className="p-4 bg-navy-950 rounded-2xl border border-navy-800 space-y-2 text-xs">
+              <div className="p-4 bg-obsidian-950 rounded-2xl border border-cyan-500/15 space-y-2 text-xs">
                 <h5 className="font-bold text-white mb-2">Meta Tag Diagnostics:</h5>
                 <div className="flex items-center justify-between">
                   <span className="text-slate-400">Title Length:</span>
@@ -175,7 +175,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-slate-400">Canonical Tag:</span>
-                  <span className="text-gold-400 font-bold">{siteSEO.canonicalUrl}</span>
+                  <span className="text-cyan-300 font-bold">{siteSEO.canonicalUrl}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-slate-400">Robots Directive:</span>
@@ -188,13 +188,13 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
           {/* 2. Social / OpenGraph Preview */}
           {activeTab === "og" && (
             <div className="space-y-4">
-              <div className="p-4 bg-navy-950 rounded-2xl border border-navy-800">
+              <div className="p-4 bg-obsidian-950 rounded-2xl border border-cyan-500/15">
                 <p className="text-xs font-bold text-slate-400 mb-3">
                   WhatsApp & Social Card Preview:
                 </p>
-                <div className="rounded-xl overflow-hidden border border-navy-700 bg-navy-900 shadow">
-                  <div className="h-36 bg-gradient-to-r from-navy-900 via-amber-950 to-navy-950 flex flex-col items-center justify-center p-4 text-center border-b border-navy-800">
-                    <span className="text-xl font-black gold-gradient-text">
+                <div className="rounded-xl overflow-hidden border border-cyan-500/25 bg-obsidian-900 shadow">
+                  <div className="h-36 bg-gradient-to-r from-obsidian-950 via-cyan-950 to-emerald-950 flex flex-col items-center justify-center p-4 text-center border-b border-cyan-500/15">
+                    <span className="text-xl font-black brand-gradient-text">
                       WORLD 777 EXCHANGE
                     </span>
                     <span className="text-xs text-white mt-1">
@@ -204,7 +204,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
                       24x7 Instant UPI Cashout
                     </span>
                   </div>
-                  <div className="p-3 bg-navy-950">
+                  <div className="p-3 bg-obsidian-950">
                     <span className="text-[10px] text-slate-500 uppercase tracking-wider block">
                       world777.com.in
                     </span>
@@ -223,7 +223,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
           {/* 3. Keywords Cloud */}
           {activeTab === "keywords" && (
             <div className="space-y-4">
-              <div className="p-4 bg-navy-950 rounded-2xl border border-navy-800">
+              <div className="p-4 bg-obsidian-950 rounded-2xl border border-cyan-500/15">
                 <p className="text-xs font-bold text-white mb-3">
                   Configured Search Engine Ranking Keywords:
                 </p>
@@ -231,7 +231,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
                   {siteSEO.keywords.map((kw, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-1 rounded-lg bg-navy-900 border border-gold-500/30 text-gold-300 text-xs font-medium"
+                      className="px-2.5 py-1 rounded-lg bg-obsidian-900 border border-cyan-500/30 text-cyan-300 text-xs font-medium"
                     >
                       {kw}
                     </span>
@@ -240,7 +240,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
               </div>
               <p className="text-[11px] text-slate-400">
                 To customize these keywords for your own domain, simply edit{" "}
-                <code className="text-gold-400 bg-navy-950 px-1 py-0.5 rounded">
+                <code className="text-cyan-400 bg-obsidian-950 px-1 py-0.5 rounded">
                   src/config/seo.ts
                 </code>
                 .
@@ -257,13 +257,13 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
                 </span>
                 <button
                   onClick={() => handleCopy(schemaCode)}
-                  className="px-3 py-1 bg-navy-800 hover:bg-navy-700 text-gold-400 text-xs font-bold rounded-lg border border-gold-500/30 flex items-center space-x-1.5 transition-colors"
+                  className="px-3 py-1 bg-obsidian-850 hover:bg-obsidian-800 text-cyan-300 text-xs font-bold rounded-xl border border-cyan-500/30 flex items-center space-x-1.5 transition-colors"
                 >
                   <Copy className="w-3 h-3" />
                   <span>{copied ? "Copied!" : "Copy JSON-LD"}</span>
                 </button>
               </div>
-              <pre className="p-4 bg-navy-950 rounded-xl border border-navy-800 text-[11px] text-emerald-300 overflow-x-auto max-h-72 font-mono">
+              <pre className="p-4 bg-obsidian-950 rounded-xl border border-cyan-500/15 text-[11px] text-emerald-300 overflow-x-auto max-h-72 font-mono">
                 {schemaCode}
               </pre>
             </div>
@@ -276,7 +276,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
                 Next.js automatically generates and serves these real SEO routes:
               </p>
               <div className="space-y-2">
-                <div className="p-3 bg-navy-950 rounded-xl border border-navy-800 flex items-center justify-between">
+                <div className="p-3 bg-obsidian-950 rounded-xl border border-cyan-500/15 flex items-center justify-between">
                   <div>
                     <span className="text-xs font-bold text-white block">/robots.txt</span>
                     <span className="text-[11px] text-slate-400">
@@ -287,7 +287,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
                     ACTIVE
                   </span>
                 </div>
-                <div className="p-3 bg-navy-950 rounded-xl border border-navy-800 flex items-center justify-between">
+                <div className="p-3 bg-obsidian-950 rounded-xl border border-cyan-500/15 flex items-center justify-between">
                   <div>
                     <span className="text-xs font-bold text-white block">/sitemap.xml</span>
                     <span className="text-[11px] text-slate-400">
@@ -298,7 +298,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
                     ACTIVE
                   </span>
                 </div>
-                <div className="p-3 bg-navy-950 rounded-xl border border-navy-800 flex items-center justify-between">
+                <div className="p-3 bg-obsidian-950 rounded-xl border border-cyan-500/15 flex items-center justify-between">
                   <div>
                     <span className="text-xs font-bold text-white block">/manifest.webmanifest</span>
                     <span className="text-[11px] text-slate-400">
@@ -315,13 +315,13 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
         </div>
 
         {/* Modal Footer */}
-        <div className="bg-navy-950 p-4 border-t border-navy-800 flex items-center justify-between shrink-0">
+        <div className="bg-obsidian-950 p-4 border-t border-cyan-500/15 flex items-center justify-between shrink-0">
           <span className="text-[11px] text-slate-400">
-            Centrally configured in <span className="text-gold-400">src/config/seo.ts</span>
+            Centrally configured in <span className="text-cyan-400">src/config/seo.ts</span>
           </span>
           <button
             onClick={onClose}
-            className="px-4 py-2 bg-gradient-to-r from-gold-500 to-amber-600 text-navy-950 font-bold text-xs rounded-xl shadow"
+            className="px-4 py-2 brand-btn-primary font-bold text-xs rounded-xl shadow"
           >
             Done
           </button>
@@ -330,4 +330,3 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
     </div>
   );
 };
-

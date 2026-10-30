@@ -39,9 +39,9 @@ export const WhatsAppModal: React.FC<WhatsAppModalProps> = ({ isOpen, onClose })
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
-      <div className="relative w-full max-w-md bg-navy-900 rounded-3xl border border-emerald-500/40 shadow-2xl overflow-hidden">
+      <div className="relative w-full max-w-md bg-obsidian-900 rounded-3xl border border-emerald-500/40 shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-emerald-950 via-navy-900 to-navy-950 p-5 border-b border-navy-800 flex items-center justify-between">
+        <div className="bg-gradient-to-r from-emerald-950 via-obsidian-900 to-obsidian-950 p-5 border-b border-cyan-500/15 flex items-center justify-between">
           <div className="flex items-center space-x-2.5">
             <div className="w-8 h-8 rounded-xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center text-emerald-400">
               <MessageCircle className="w-5 h-5 fill-emerald-400" />
@@ -53,7 +53,7 @@ export const WhatsAppModal: React.FC<WhatsAppModalProps> = ({ isOpen, onClose })
           </div>
           <button
             onClick={onClose}
-            className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-navy-800 transition-colors"
+            className="p-1 rounded-lg text-slate-400 hover:text-white hover:bg-obsidian-800 transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -84,7 +84,7 @@ export const WhatsAppModal: React.FC<WhatsAppModalProps> = ({ isOpen, onClose })
                   className={`p-2.5 rounded-xl text-xs font-bold text-left transition-all ${
                     selectedIntent === item.id
                       ? "bg-emerald-600/20 border border-emerald-500 text-emerald-300"
-                      : "bg-navy-950 border border-navy-800 text-slate-400 hover:text-white"
+                      : "bg-obsidian-950 border border-cyan-500/15 text-slate-400 hover:text-white"
                   }`}
                 >
                   {item.label}
@@ -94,7 +94,7 @@ export const WhatsAppModal: React.FC<WhatsAppModalProps> = ({ isOpen, onClose })
           </div>
 
           {/* Message Preview */}
-          <div className="p-3 bg-navy-950 rounded-xl border border-navy-800 space-y-1">
+          <div className="p-3 bg-obsidian-950 rounded-xl border border-cyan-500/15 space-y-1">
             <span className="text-[10px] uppercase font-black tracking-wider text-slate-500 block">
               Pre-filled Message:
             </span>
@@ -104,7 +104,7 @@ export const WhatsAppModal: React.FC<WhatsAppModalProps> = ({ isOpen, onClose })
           {/* Launch Button */}
           <button
             onClick={handleLaunchWhatsApp}
-            className="w-full py-3 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-lg flex items-center justify-center space-x-2 transition-transform active:scale-95"
+            className="w-full py-3 bg-[#25D366] hover:bg-[#20ba59] text-white font-black text-xs uppercase tracking-wider rounded-xl shadow-lg flex items-center justify-center space-x-2 transition-transform active:scale-95"
           >
             <Send className="w-4 h-4" />
             <span>Open Verified WhatsApp Chat</span>
@@ -119,4 +119,3 @@ export const WhatsAppModal: React.FC<WhatsAppModalProps> = ({ isOpen, onClose })
     </div>
   );
 };
-

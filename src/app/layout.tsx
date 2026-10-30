@@ -119,7 +119,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#070b14] text-slate-100 min-h-screen selection:bg-gold-500/30 selection:text-gold-300`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#06080e] text-slate-100 min-h-screen selection:bg-cyan-500/30 selection:text-cyan-300`}
       >
         {children}
       </body>

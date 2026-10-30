@@ -50,7 +50,7 @@ export const siteSEO: SiteSEOConfig = {
   locale: "en_IN",
   ogImage: "https://www.world777.com.in/og-image.jpg",
   twitterHandle: "@World777Online",
-  themeColor: "#070b14",
+  themeColor: "#06080e",
   contactWhatsApp: "+919876543210",
   contactTelegram: "https://t.me/world777official",
   supportEmail: "contact@world777.com.in",
@@ -89,6 +89,13 @@ export const faqs = [
       "World777 utilizes end-to-end 256-bit SSL banking-grade encryption, strict zero-log privacy safeguards, and certified RNG (Random Number Generator) testing to ensure 100% fair play, secure transactions, and player privacy.",
   },
 ];
+
+// ─── Central WhatsApp helper ───────────────────────────────────────────────
+// Change contactWhatsApp above to update ALL buttons across the site.
+export function getWhatsAppUrl(message: string = "get new id"): string {
+  const clean = siteSEO.contactWhatsApp.replace(/[^0-9]/g, "");
+  return `https://wa.me/${clean}?text=${encodeURIComponent(message)}`;
+}
 
 export function generateStructuredData() {
   const websiteSchema = {

@@ -17,9 +17,10 @@ import { LoginModal } from "@/components/modals/LoginModal";
 import { SignupModal } from "@/components/modals/SignupModal";
 import { ApkModal } from "@/components/modals/ApkModal";
 import { SeoManageModal } from "@/components/modals/SeoManageModal";
-import { WhatsAppModal } from "@/components/modals/WhatsAppModal";
+  // WhatsApp Modal import kept but no longer used for regular CTAs
+  // import { WhatsAppModal } from "@/components/modals/WhatsAppModal";
 import { Match } from "@/data/mockData";
-import { siteSEO } from "@/config/seo";
+import { siteSEO, getWhatsAppUrl } from "@/config/seo";
 
 export default function Home() {
   const [selectedSport, setSelectedSport] = useState<string>("all");
@@ -31,7 +32,11 @@ export default function Home() {
   const [signupModalOpen, setSignupModalOpen] = useState(false);
   const [apkModalOpen, setApkModalOpen] = useState(false);
   const [seoModalOpen, setSeoModalOpen] = useState(false);
-  const [whatsAppModalOpen, setWhatsAppModalOpen] = useState(false);
+
+  // Direct WhatsApp opener — reads number from src/config/seo.ts → contactWhatsApp
+  const openWhatsApp = () => {
+    window.open(getWhatsAppUrl("get new id"), "_blank", "noopener,noreferrer");
+  };
 
   const handleSelectBet = (
     match: Match,
@@ -52,14 +57,14 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#070b14] text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-[#06080e] text-slate-100 flex flex-col font-sans">
       {/* 1. Header with brand crest, quick login bar, SEO manager trigger */}
       <Header
         onOpenLogin={() => setLoginModalOpen(true)}
         onOpenSignup={() => setSignupModalOpen(true)}
         onOpenSeoModal={() => setSeoModalOpen(true)}
         onOpenApkModal={() => setApkModalOpen(true)}
-        onOpenWhatsApp={() => setWhatsAppModalOpen(true)}
+        onOpenWhatsApp={openWhatsApp}
       />
 
       {/* 2. SubNav with category switcher, live announcement ticker marquee, APK trigger */}
@@ -85,7 +90,7 @@ export default function Home() {
           <div className="col-span-12 lg:col-span-6 space-y-6">
             {/* Hero Banner Carousel */}
             <HeroCarousel
-              onOpenWhatsApp={() => setWhatsAppModalOpen(true)}
+              onOpenWhatsApp={openWhatsApp}
               onOpenSignup={() => setSignupModalOpen(true)}
               onOpenApkModal={() => setApkModalOpen(true)}
             />
@@ -99,7 +104,7 @@ export default function Home() {
             {/* Fantasy & Instant Games, Live Casino, Slots */}
             <GamesSection
               onOpenLogin={() => setLoginModalOpen(true)}
-              onOpenWhatsApp={() => setWhatsAppModalOpen(true)}
+              onOpenWhatsApp={openWhatsApp}
             />
 
             {/* 4-Pillar Trust Feature Badges */}
@@ -107,7 +112,7 @@ export default function Home() {
 
             {/* Full SEO Semantic Article Section with FAQ Accordion */}
             <SeoArticleSection
-              onOpenWhatsApp={() => setWhatsAppModalOpen(true)}
+              onOpenWhatsApp={openWhatsApp}
               onOpenSignup={() => setSignupModalOpen(true)}
             />
           </div>
@@ -117,7 +122,7 @@ export default function Home() {
             <RightSidebar
               selectedBet={selectedBet}
               onClearBet={handleClearBet}
-              onOpenWhatsApp={() => setWhatsAppModalOpen(true)}
+              onOpenWhatsApp={openWhatsApp}
               onOpenSignup={() => setSignupModalOpen(true)}
             />
           </div>
@@ -130,13 +135,13 @@ export default function Home() {
         onOpenSignup={() => setSignupModalOpen(true)}
         onOpenSeoModal={() => setSeoModalOpen(true)}
         onOpenApkModal={() => setApkModalOpen(true)}
-        onOpenWhatsApp={() => setWhatsAppModalOpen(true)}
+        onOpenWhatsApp={openWhatsApp}
       />
 
       {/* Floating Action Button (Direct WhatsApp with 'get new id') */}
       <div className="fixed bottom-6 right-6 z-40">
         <a
-          href={`https://wa.me/${siteSEO.contactWhatsApp.replace(/[^0-9]/g, "")}?text=${encodeURIComponent("get new id")}`}
+          href={getWhatsAppUrl("get new id")}
           target="_blank"
           rel="noopener noreferrer"
           className="group relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-[0_8px_30px_rgba(37,211,102,0.45)] hover:shadow-[0_10px_35px_rgba(37,211,102,0.65)] transition-all duration-300 hover:scale-110 active:scale-95"
@@ -167,14 +172,14 @@ export default function Home() {
         isOpen={loginModalOpen}
         onClose={() => setLoginModalOpen(false)}
         onOpenSignup={() => setSignupModalOpen(true)}
-        onOpenWhatsApp={() => setWhatsAppModalOpen(true)}
+        onOpenWhatsApp={openWhatsApp}
       />
 
       <SignupModal
         isOpen={signupModalOpen}
         onClose={() => setSignupModalOpen(false)}
         onOpenLogin={() => setLoginModalOpen(true)}
-        onOpenWhatsApp={() => setWhatsAppModalOpen(true)}
+        onOpenWhatsApp={openWhatsApp}
       />
 
       <ApkModal
@@ -185,11 +190,6 @@ export default function Home() {
       <SeoManageModal
         isOpen={seoModalOpen}
         onClose={() => setSeoModalOpen(false)}
-      />
-
-      <WhatsAppModal
-        isOpen={whatsAppModalOpen}
-        onClose={() => setWhatsAppModalOpen(false)}
       />
     </div>
   );

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --background: #070b14;
+  --background: #06080e;
   --foreground: #f1f5f9;
 }
 
@@ -14,61 +14,88 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom Scrollbar */
+/* Custom Sleek Scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #090e1a;
+  background: #06080e;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #172238;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ca8a04;
+  background: #06b6d4;
 }
 
-/* Glassmorphism */
-.glass-panel {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.gold-gradient-text {
-  background: linear-gradient(135deg, #fef08a 0%, #eab308 50%, #ca8a04 100%);
+/* Brand Gradients (Cyber Mint & Electric Cyan) */
+.brand-gradient-text {
+  background: linear-gradient(135deg, #a5f3fc 0%, #22d3ee 40%, #10b981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gold-gradient-bg {
-  background: linear-gradient(135deg, #facc15 0%, #eab308 50%, #ca8a04 100%);
+.brand-gradient-bg {
+  background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #10b981 100%);
 }
 
+.brand-btn-primary {
+  background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
+  color: #06080e;
+  font-weight: 800;
+  box-shadow: 0 4px 20px -2px rgba(6, 182, 212, 0.4);
+  transition: all 0.2s ease-in-out;
+}
+
+.brand-btn-primary:hover {
+  background: linear-gradient(135deg, #22d3ee 0%, #34d399 100%);
+  box-shadow: 0 6px 24px -1px rgba(16, 185, 129, 0.5);
+  transform: translateY(-1px);
+}
+
+.brand-glass-panel {
+  background: rgba(11, 16, 27, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(34, 211, 238, 0.15);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.35);
+}
+
+.glow-mint {
+  box-shadow: 0 0 25px -4px rgba(16, 185, 129, 0.35);
+}
+
+/* High-Contrast Exchange Back & Lay Odds */
 .exchange-back {
-  background-color: #72bbe7;
-  color: #03213a;
+  background-color: #38bdf8;
+  color: #061826;
+  font-weight: 800;
   transition: all 0.15s ease-in-out;
 }
 
 .exchange-back:hover {
-  background-color: #5aa8dc;
+  background-color: #0ea5e9;
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
 .exchange-lay {
-  background-color: #faa9ba;
-  color: #3b0714;
+  background-color: #fb7185;
+  color: #2b060f;
+  font-weight: 800;
   transition: all 0.15s ease-in-out;
 }
 
 .exchange-lay:hover {
-  background-color: #f58fa4;
+  background-color: #f43f5e;
+  color: #ffffff;
   transform: translateY(-1px);
 }
 
