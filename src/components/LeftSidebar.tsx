@@ -65,22 +65,20 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   );
 
   return (
-    <aside className="w-full bg-obsidian-900/90 rounded-2xl border border-cyan-500/15 p-3 sm:p-4 shadow-xl space-y-4">
+    <aside className="w-full bg-obsidian-900 rounded-sm border border-white/5 p-2 shadow-md space-y-2">
       {/* Sidebar Header */}
-      <div className="flex items-center justify-between border-b border-cyan-500/10 pb-3">
+      <div className="flex items-center justify-between bg-[#116e52] -mx-2 -mt-2 px-2.5 py-2">
         <div className="flex items-center space-x-2">
-          <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
-          <h3 className="text-sm font-extrabold tracking-wide text-white uppercase">
+          <div className="hidden" />
+          <h3 className="text-xs font-bold tracking-wide text-white">
             All Sports
           </h3>
         </div>
-        <span className="text-[11px] font-semibold text-cyan-300 bg-obsidian-950 px-2 py-0.5 rounded-md border border-cyan-500/20">
-          Exchange Live
-        </span>
+        <span className="hidden">Exchange Live</span>
       </div>
 
       {/* Sport Search */}
-      <div className="relative">
+      <div className="relative hidden">
         <Search className="w-3.5 h-3.5 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
         <input
           type="text"
@@ -92,12 +90,12 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
       </div>
 
       {/* Sports Navigation List */}
-      <nav className="space-y-1">
+      <nav className="space-y-0.5">
         <button
           onClick={() => setSelectedSport("all")}
-          className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-semibold transition-all ${
+          className={`hidden w-full flex items-center justify-between px-2 py-1.5 rounded-sm text-xs font-semibold transition-all ${
             selectedSport === "all"
-              ? "bg-gradient-to-r from-cyan-500/20 to-emerald-500/10 text-cyan-300 border border-cyan-500/30"
+              ? "bg-obsidian-800 text-white border-l-2 border-emerald-500"
               : "text-slate-300 hover:text-white hover:bg-obsidian-850"
           }`}
         >
@@ -105,7 +103,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
             <Zap className="w-4 h-4 text-cyan-400" />
             <span>All Live Markets</span>
           </div>
-          <span className="text-[10px] bg-obsidian-950 text-cyan-300 px-1.5 py-0.5 rounded font-bold border border-cyan-500/20">
+          <span className="text-[10px] text-slate-400 px-1 font-bold">
             68+
           </span>
         </button>
@@ -116,26 +114,24 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
             <button
               key={sport.id}
               onClick={() => setSelectedSport(sport.id)}
-              className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-medium transition-all ${
+              className={`w-full flex items-center justify-between px-2 py-1.5 rounded-sm text-xs font-medium transition-all ${
                 isSelected
-                  ? "bg-obsidian-850 text-white font-semibold border-l-4 border-cyan-400 shadow-sm"
+                  ? "bg-obsidian-800 text-white font-semibold border-l-2 border-emerald-500"
                   : "text-slate-300 hover:text-white hover:bg-obsidian-850/60"
               }`}
             >
               <div className="flex items-center space-x-2.5">
                 {getIcon(sport.iconName)}
-                <span>{sport.name}</span>
+                <span className="truncate">{sport.name}</span>
               </div>
-              <span className="text-[10px] bg-obsidian-950 text-emerald-400 px-1.5 py-0.5 rounded font-bold border border-emerald-500/20">
-                {sport.liveCount} Live
-              </span>
+              <span className="text-[10px] text-slate-500 px-1 font-bold">{sport.liveCount}</span>
             </button>
           );
         })}
       </nav>
 
       {/* Useful Quick Shortcuts */}
-      <div className="border-t border-cyan-500/10 pt-3 space-y-1">
+      <div className="hidden">
         <p className="text-[10px] uppercase font-bold tracking-wider text-slate-500 px-2 mb-1">
           Quick Links
         </p>
@@ -155,25 +151,19 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
         </a>
       </div>
 
-      {/* APK Banner */}
-      <div
-        onClick={onOpenApkModal}
-        className="cursor-pointer p-3 rounded-2xl bg-gradient-to-br from-emerald-950/80 via-obsidian-900 to-obsidian-950 border border-emerald-500/30 hover:border-emerald-500/60 transition-all text-left group shadow-lg"
-      >
+      <div className="hidden" onClick={onOpenApkModal}>
         <div className="flex items-center justify-between mb-1">
           <span className="text-[10px] font-black tracking-widest text-emerald-400 uppercase">
             Official App
           </span>
           <Smartphone className="w-4 h-4 text-emerald-400 group-hover:scale-110 transition-transform" />
         </div>
-        <p className="text-xs font-bold text-white">Download Android APK</p>
         <p className="text-[11px] text-slate-400 mt-0.5">
           Fast In-Play betting with 0s latency & instant notifications.
         </p>
       </div>
 
-      {/* Certified Badge */}
-      <div className="p-2.5 rounded-xl bg-obsidian-950 border border-cyan-500/15 text-center">
+      <div className="hidden">
         <div className="flex items-center justify-center space-x-1.5 text-slate-400 text-[11px]">
           <CheckCircle className="w-3.5 h-3.5 text-emerald-400" />
           <span>100% Verified Exchange</span>

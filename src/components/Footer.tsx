@@ -16,7 +16,6 @@ export const Footer: React.FC<FooterProps> = ({
   onOpenLogin,
   onOpenSignup,
   onOpenSeoModal,
-  onOpenApkModal,
   onOpenWhatsApp,
 }) => {
   return (
@@ -111,14 +110,6 @@ export const Footer: React.FC<FooterProps> = ({
                 className="hover:text-cyan-300 transition-colors text-left"
               >
                 Create Online ID
-              </button>
-            </li>
-            <li>
-              <button
-                onClick={onOpenApkModal}
-                className="hover:text-cyan-300 transition-colors text-left"
-              >
-                Download Android APK
               </button>
             </li>
             <li>

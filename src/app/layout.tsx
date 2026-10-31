@@ -23,6 +23,10 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
   metadataBase: new URL(siteSEO.canonicalUrl),
   title: {
     default: siteSEO.defaultTitle,
@@ -30,34 +34,17 @@ export const metadata: Metadata = {
   },
   description: siteSEO.description,
   keywords: siteSEO.keywords,
-  authors: [{ name: "World777 Gaming Media Network", url: siteSEO.canonicalUrl }],
-  creator: "World777 Exchange Team",
-  publisher: "World777 International",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  alternates: {
-    canonical: siteSEO.canonicalUrl,
-    languages: {
-      "en-IN": siteSEO.canonicalUrl,
-      "hi-IN": `${siteSEO.canonicalUrl}/hi`,
-    },
-  },
+  alternates: { canonical: siteSEO.canonicalUrl },
   openGraph: {
     title: siteSEO.defaultTitle,
     description: siteSEO.description,
     url: siteSEO.canonicalUrl,
     siteName: siteSEO.siteName,
-    images: [
-      {
-        url: siteSEO.ogImage,
-        width: 1200,
-        height: 630,
-        alt: "World777 Sports Exchange & Live Casino Portal",
-      },
-    ],
     locale: siteSEO.locale,
     type: "website",
   },
@@ -65,9 +52,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: siteSEO.defaultTitle,
     description: siteSEO.description,
-    images: [siteSEO.ogImage],
-    creator: siteSEO.twitterHandle,
-    site: siteSEO.twitterHandle,
   },
   robots: {
     index: true,
@@ -87,8 +71,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const { websiteSchema, organizationSchema, faqSchema, breadcrumbSchema } =
-    generateStructuredData();
+  const { websiteSchema, organizationSchema, faqSchema } = generateStructuredData();
 
   return (
     <html lang="en" className="dark scroll-smooth">
@@ -111,15 +94,9 @@ export default function RootLayout({
             __html: JSON.stringify(faqSchema),
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(breadcrumbSchema),
-          }}
-        />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#06080e] text-slate-100 min-h-screen selection:bg-cyan-500/30 selection:text-cyan-300`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#1b2025] text-slate-100 min-h-screen selection:bg-emerald-700/40 selection:text-white`}
       >
         {children}
       </body>

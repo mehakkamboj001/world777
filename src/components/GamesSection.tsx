@@ -1,12 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import {
+  Activity,
+  CircleDot,
+  Coins,
+  Crown,
+  Dice5,
+  Dice6,
+  Flame,
   Gamepad2,
-  Tv,
-  Sparkles,
-  Users,
+  Layers,
+  PartyPopper,
+  Plane,
   Play,
+  Sparkles,
+  Tv,
   Zap,
 } from "lucide-react";
 import { fantasyGames, liveCasinoGames, slotGames, GameItem } from "@/data/mockData";
@@ -16,153 +25,149 @@ interface GamesSectionProps {
   onOpenWhatsApp: () => void;
 }
 
-export const GamesSection: React.FC<GamesSectionProps> = ({
+const gameArtwork: Record<GameItem["category"], string[]> = {
+  fantasy: [
+    "/images/games/gameplay.webp",
+    "/images/games/cricket-ground.webp",
+    "/images/games/playing-cards.webp",
+    "/images/games/playing-cards.webp",
+    "/images/games/casino-slots.webp",
+    "/images/games/cricket-ground.webp",
+    "/images/games/casino-slots.webp",
+    "/images/games/playing-cards.webp",
+  ],
+  casino: [
+    "/images/games/casino-slots.webp",
+    "/images/games/playing-cards.webp",
+    "/images/games/casino-slots.webp",
+    "/images/games/gameplay.webp",
+    "/images/games/gameplay.webp",
+    "/images/games/playing-cards.webp",
+  ],
+  slots: [
+    "/images/games/casino-slots.webp",
+    "/images/games/playing-cards.webp",
+    "/images/games/casino-slots.webp",
+    "/images/games/gameplay.webp",
+  ],
+};
+
+const gameIcons: Record<string, React.ComponentType<{ className?: string }>> = {
+  Activity,
+  CircleDot,
+  Coins,
+  Crown,
+  Dice5,
+  Dice6,
+  Flame,
+  Gamepad2,
+  Layers,
+  PartyPopper,
+  Plane,
+  Sparkles,
+  Zap,
+};
+
+interface GameGridProps extends GamesSectionProps {
+  games: GameItem[];
+}
+
+const GameGrid: React.FC<GameGridProps> = ({
+  games,
   onOpenLogin,
   onOpenWhatsApp,
-}) => {
-  const [activeTab, setActiveTab] = useState<"fantasy" | "casino" | "slots">("fantasy");
+}) => (
+  <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-2">
+    {games.map((game, index) => {
+      const GameIcon = gameIcons[game.iconType] ?? Gamepad2;
+      const artwork = gameArtwork[game.category][index % gameArtwork[game.category].length];
 
-  const getGamesList = (): GameItem[] => {
-    if (activeTab === "fantasy") return fantasyGames;
-    if (activeTab === "casino") return liveCasinoGames;
-    return slotGames;
-  };
-
-  const getTabTitle = () => {
-    if (activeTab === "fantasy") return "Fantasy & Instant Multiplier Games";
-    if (activeTab === "casino") return "Live Casino & Real Dealer Tables";
-    return "Jackpot Slots & Megaways";
-  };
-
-  const games = getGamesList();
-
-  return (
-    <div className="space-y-6 mb-10" id="casino">
-      {/* Category selector & header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-obsidian-900/90 p-4 rounded-2xl border border-cyan-500/15 shadow-xl">
-        <div className="flex items-center space-x-3">
-          <div className="p-2.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400">
-            {activeTab === "fantasy" ? (
-              <Gamepad2 className="w-5 h-5 text-cyan-400" />
-            ) : activeTab === "casino" ? (
-              <Tv className="w-5 h-5 text-emerald-400" />
-            ) : (
-              <Sparkles className="w-5 h-5 text-pink-400" />
-            )}
-          </div>
-          <div>
-            <h2 className="text-lg font-extrabold text-white">{getTabTitle()}</h2>
-            <p className="text-xs text-slate-400">
-              Live streamed 24x7 with fair play RNG and instant auto settlements
-            </p>
-          </div>
-        </div>
-
-        {/* Tab Buttons */}
-        <div className="flex items-center space-x-2 bg-obsidian-950 p-1 rounded-xl border border-cyan-500/20">
-          <button
-            onClick={() => setActiveTab("fantasy")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-              activeTab === "fantasy"
-                ? "brand-btn-primary shadow-md"
-                : "text-slate-400 hover:text-white"
-            }`}
-          >
-            Fantasy (8)
-          </button>
-          <button
-            onClick={() => setActiveTab("casino")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-              activeTab === "casino"
-                ? "bg-gradient-to-r from-emerald-500 to-teal-500 text-obsidian-950 shadow-md font-extrabold"
-                : "text-slate-400 hover:text-white"
-            }`}
-          >
-            Live Casino (6)
-          </button>
-          <button
-            onClick={() => setActiveTab("slots")}
-            className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
-              activeTab === "slots"
-                ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-md font-extrabold"
-                : "text-slate-400 hover:text-white"
-            }`}
-          >
-            Slots (4)
-          </button>
-        </div>
-      </div>
-
-      {/* Games Card Grid */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-        {games.map((game) => (
+      return (
+        <article
+          key={game.id}
+          className="group relative h-[68px] sm:h-[76px] overflow-hidden rounded-lg border border-white/10 bg-obsidian-900 shadow-md transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-emerald-400/70 hover:shadow-[0_8px_24px_rgba(17,113,82,0.35)] motion-reduce:transform-none"
+        >
           <div
-            key={game.id}
-            className="group relative bg-obsidian-900 rounded-2xl border border-cyan-500/15 hover:border-cyan-400/60 overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-cyan-500/10"
-          >
-            {/* Card Background Gradient Artwork */}
-            <div
-              className={`h-36 sm:h-40 bg-gradient-to-br ${game.bgGradient} p-4 flex flex-col justify-between relative overflow-hidden`}
-            >
-              {/* Top Row: Badge & Players */}
-              <div className="flex items-center justify-between z-10">
-                {game.badge ? (
-                  <span className="text-[10px] font-black tracking-wider uppercase px-2 py-0.5 rounded-full bg-cyan-400 text-obsidian-950 shadow">
-                    {game.badge}
-                  </span>
-                ) : (
-                  <span />
-                )}
-                <span className="text-[10px] bg-obsidian-950/85 backdrop-blur-md text-emerald-400 font-semibold px-2 py-0.5 rounded-full border border-cyan-500/20 flex items-center gap-1">
-                  <Users className="w-2.5 h-2.5" />
-                  {game.playersCount}
-                </span>
-              </div>
-
-              {/* Center Game Graphic Element */}
-              <div className="flex items-center justify-center py-2">
-                <div className="w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center shadow-inner group-hover:scale-110 group-hover:bg-cyan-500/20 transition-transform">
-                  <Zap className="w-7 h-7 text-cyan-300 animate-pulse" />
-                </div>
-              </div>
-
-              {/* Bottom Tag */}
-              <div className="z-10">
-                <span className="text-[11px] font-medium text-slate-300 bg-obsidian-950/70 px-2 py-0.5 rounded-md border border-white/10">
-                  {game.tag}
-                </span>
-              </div>
-
-              {/* Hover overlay with Action Buttons */}
-              <div className="absolute inset-0 bg-obsidian-950/90 backdrop-blur-xs opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 p-3 z-20">
-                <button
-                  onClick={onOpenWhatsApp}
-                  className="w-full py-2 brand-btn-primary font-black text-xs rounded-xl shadow flex items-center justify-center space-x-1 transition-transform active:scale-95"
-                >
-                  <Play className="w-3.5 h-3.5 fill-obsidian-950" />
-                  <span>Play Real Cash</span>
-                </button>
-                <button
-                  onClick={onOpenLogin}
-                  className="w-full py-1.5 bg-obsidian-850 hover:bg-obsidian-800 text-cyan-300 text-xs font-bold rounded-xl border border-cyan-500/30 transition-colors"
-                >
-                  Play Free Demo
-                </button>
-              </div>
-            </div>
-
-            {/* Card Footer Info */}
-            <div className="p-3 bg-obsidian-950/90 border-t border-cyan-500/10 flex items-center justify-between">
-              <h3 className="text-xs sm:text-sm font-bold text-white group-hover:text-cyan-300 transition-colors truncate">
+            className="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110"
+            style={{
+              backgroundImage: `linear-gradient(180deg, rgba(7, 12, 14, 0.05), rgba(7, 12, 14, 0.82)), url("${artwork}")`,
+            }}
+          />
+          <div className="absolute inset-0 flex items-end justify-between gap-1 p-2 transition-opacity duration-200 group-hover:opacity-0 group-focus-within:opacity-0">
+            <div className="min-w-0">
+              <h3 className="line-clamp-1 text-[10px] sm:text-[11px] font-black leading-tight text-white drop-shadow-lg">
                 {game.title}
               </h3>
-              <span className="text-[10px] text-slate-400 font-semibold uppercase">
-                {game.category}
+              <span className="text-[8px] font-bold uppercase text-white/75">
+                {game.category === "casino" ? "Live Casino" : game.category}
               </span>
             </div>
+            <GameIcon className="mb-0.5 h-4 w-4 shrink-0 text-white drop-shadow-lg" />
           </div>
-        ))}
-      </div>
+          {game.badge && (
+            <span className="absolute left-1.5 top-1.5 rounded-sm bg-[#116e52] px-1.5 py-0.5 text-[8px] font-black uppercase tracking-wide text-white shadow">
+              {game.badge}
+            </span>
+          )}
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-1.5 bg-[#11181a]/90 p-2 opacity-0 backdrop-blur-[2px] transition-all duration-200 group-hover:opacity-100 group-focus-within:opacity-100">
+            <span className="line-clamp-1 text-center text-[10px] font-bold text-white">
+              {game.title}
+            </span>
+            <div className="flex items-center gap-1.5">
+              <button
+                onClick={onOpenWhatsApp}
+                className="flex items-center gap-1 rounded bg-[#116e52] px-2 py-1 text-[9px] font-bold text-white transition-colors hover:bg-[#16835f] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+              >
+                <Play className="h-3 w-3 fill-current" />
+                Play
+              </button>
+              <button
+                onClick={onOpenLogin}
+                className="rounded border border-white/30 bg-white/10 px-2 py-1 text-[9px] font-bold text-white transition-colors hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+              >
+                Demo
+              </button>
+            </div>
+          </div>
+        </article>
+      );
+    })}
+  </div>
+);
+
+export const GamesSection: React.FC<GamesSectionProps> = (props) => {
+  const sections = [
+    {
+      id: "fantasy",
+      title: "Fantasy Games",
+      icon: Gamepad2,
+      games: fantasyGames,
+    },
+    {
+      id: "casino",
+      title: "Live Casino",
+      icon: Tv,
+      games: liveCasinoGames,
+    },
+    {
+      id: "slots",
+      title: "Slots",
+      icon: Sparkles,
+      games: slotGames,
+    },
+  ];
+
+  return (
+    <div className="mb-5 space-y-3">
+      {sections.map(({ id, title, icon: Icon, games }) => (
+        <section key={id} id={id} className="space-y-2 scroll-mt-20">
+          <div className="flex min-h-[30px] items-center gap-2 bg-[#116e52] px-2.5 py-1 text-white shadow-sm">
+            <Icon className="h-4 w-4" aria-hidden="true" />
+            <h2 className="text-sm font-bold">{title}</h2>
+          </div>
+          <GameGrid games={games} {...props} />
+        </section>
+      ))}
     </div>
   );
 };

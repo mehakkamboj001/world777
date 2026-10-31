@@ -57,8 +57,14 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-[#06080e] text-slate-100 flex flex-col font-sans">
+    <div className="min-h-screen bg-[#252a30] text-slate-100 flex flex-col font-sans">
       {/* 1. Header with brand crest, quick login bar, SEO manager trigger */}
+      <SubNav
+        activeTab={activeNavTab}
+        setActiveTab={setActiveNavTab}
+        onOpenApkModal={() => setApkModalOpen(true)}
+      />
+
       <Header
         onOpenLogin={() => setLoginModalOpen(true)}
         onOpenSignup={() => setSignupModalOpen(true)}
@@ -67,18 +73,11 @@ export default function Home() {
         onOpenWhatsApp={openWhatsApp}
       />
 
-      {/* 2. SubNav with category switcher, live announcement ticker marquee, APK trigger */}
-      <SubNav
-        activeTab={activeNavTab}
-        setActiveTab={setActiveNavTab}
-        onOpenApkModal={() => setApkModalOpen(true)}
-      />
-
       {/* 3. Main 3-Column Content Layout */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-5">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+      <main className="flex-1 max-w-[1440px] w-full mx-auto px-2 sm:px-3 lg:px-4 py-2">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-2.5">
           {/* Left Sidebar: Sports Categories & Live badges */}
-          <div className="hidden lg:block lg:col-span-3">
+          <div className="hidden lg:block lg:col-span-2">
             <LeftSidebar
               selectedSport={selectedSport}
               setSelectedSport={setSelectedSport}
@@ -87,7 +86,7 @@ export default function Home() {
           </div>
 
           {/* Center Column: Hero Carousel, Match Exchange, Games, SEO Articles */}
-          <div className="col-span-12 lg:col-span-6 space-y-6">
+          <div className="col-span-12 lg:col-span-8 space-y-3">
             {/* Hero Banner Carousel */}
             <HeroCarousel
               onOpenWhatsApp={openWhatsApp}
@@ -118,12 +117,11 @@ export default function Home() {
           </div>
 
           {/* Right Sidebar: Interactive Bet Slip & Live Winners Announcements */}
-          <div className="col-span-12 lg:col-span-3 space-y-5">
+          <div className="col-span-12 lg:col-span-2 space-y-3">
             <RightSidebar
               selectedBet={selectedBet}
               onClearBet={handleClearBet}
               onOpenWhatsApp={openWhatsApp}
-              onOpenSignup={() => setSignupModalOpen(true)}
             />
           </div>
         </div>

@@ -5,10 +5,7 @@ import {
   Flame,
   Gamepad2,
   Tv,
-  Trophy,
-  Smartphone,
   Sparkles,
-  Zap,
   Volume2,
 } from "lucide-react";
 
@@ -21,22 +18,19 @@ interface SubNavProps {
 export const SubNav: React.FC<SubNavProps> = ({
   activeTab,
   setActiveTab,
-  onOpenApkModal,
 }) => {
   const tabs = [
     { id: "exchange", label: "Exchange", icon: Flame },
-    { id: "in-play", label: "In-Play (Live)", icon: Zap, badge: "LIVE" },
-    { id: "cricket", label: "Cricket Special", icon: Trophy },
     { id: "casino", label: "Live Casino", icon: Tv },
-    { id: "fantasy", label: "Fantasy Games", icon: Gamepad2 },
     { id: "slots", label: "Slots", icon: Sparkles },
+    { id: "fantasy", label: "Fantasy Games", icon: Gamepad2 },
   ];
 
   return (
-    <div className="w-full bg-obsidian-900/90 border-b border-cyan-500/15">
+    <div className="w-full bg-[#116e52] border-b border-black/20">
       {/* Category Tabs & APK Button */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between overflow-x-auto no-scrollbar">
-        <div className="flex space-x-1 sm:space-x-2 py-2">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex justify-center items-center overflow-x-auto no-scrollbar">
+        <div className="flex justify-center space-x-1 sm:space-x-2 py-1.5">
           {tabs.map((tab) => {
             const Icon = tab.icon;
             const isActive = activeTab === tab.id;
@@ -46,40 +40,21 @@ export const SubNav: React.FC<SubNavProps> = ({
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                   isActive
-                    ? "brand-btn-primary shadow-md font-bold"
-                    : "text-slate-300 hover:text-cyan-300 hover:bg-obsidian-850"
+                    ? "bg-white/15 text-white shadow-sm font-bold"
+                    : "text-white/85 hover:text-white hover:bg-white/10"
                 }`}
               >
                 <Icon className={`w-3.5 h-3.5 ${isActive ? "text-obsidian-950" : "text-cyan-400"}`} />
                 <span>{tab.label}</span>
-                {tab.badge && (
-                  <span className="px-1.5 py-0.2 bg-rose-500 text-white text-[9px] rounded-full font-black animate-pulse">
-                    {tab.badge}
-                  </span>
-                )}
               </button>
             );
           })}
         </div>
-
-        {/* APK Download Button */}
-        <div className="hidden md:flex items-center pl-4 py-2">
-          <button
-            onClick={onOpenApkModal}
-            className="flex items-center space-x-1.5 px-3.5 py-1.5 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white rounded-xl text-xs font-bold shadow-md transition-all whitespace-nowrap group"
-          >
-            <Smartphone className="w-3.5 h-3.5 group-hover:scale-110 transition-transform" />
-            <span>Download APK</span>
-            <span className="text-[10px] bg-black/30 px-1 rounded text-emerald-200">
-              v3.8
-            </span>
-          </button>
-        </div>
       </div>
 
       {/* Ticker / Marquee Banner */}
-      <div className="bg-obsidian-950 border-t border-cyan-500/10 px-3 py-1.5 flex items-center text-xs">
-        <div className="flex items-center space-x-1 bg-cyan-500/10 text-cyan-300 font-bold px-2 py-0.5 rounded-md text-[11px] uppercase tracking-wider shrink-0 border border-cyan-500/30 mr-3">
+      <div className="bg-obsidian-950 border-t border-white/10 px-3 py-1 flex items-center text-xs">
+      <div className="flex items-center space-x-1 bg-white/10 text-white font-bold px-2 py-0.5 rounded-sm text-[10px] uppercase tracking-wider shrink-0 border border-white/20 mr-3">
           <Volume2 className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
           <span>Notice</span>
         </div>

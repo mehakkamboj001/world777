@@ -12,8 +12,6 @@ interface HeroCarouselProps {
 
 export const HeroCarousel: React.FC<HeroCarouselProps> = ({
   onOpenWhatsApp,
-  onOpenSignup,
-  onOpenApkModal,
 }) => {
   const slides = [
     {
@@ -22,8 +20,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
       title: "LIVE CRICKET BACK & LAY SPORTS EXCHANGE",
       subtitle:
         "Trade live in-play cricket odds with highest liquidity, 0% commission, and automated 90-second UPI payouts.",
-      image:
-        "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=1600&auto=format&fit=crop",
+      image: "/images/games/cricket-ground.webp",
       ctaPrimary: "Get Cricket ID",
       ctaSecondary: "Free Demo ID",
       tagText: "⚡ Live In-Play Odds",
@@ -39,8 +36,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
       title: "TEEN PATTI, HINDI ROULETTE & BACCARAT",
       subtitle:
         "Stream crystal-clear 4K tables with native Hindi-speaking dealers, lightning multipliers up to 500x, and VIP high-roller suites.",
-      image:
-        "https://images.unsplash.com/photo-1518609878373-06d740f60d8b?q=80&w=1600&auto=format&fit=crop",
+      image: "/images/games/casino-slots.webp",
       ctaPrimary: "Join Live Casino",
       ctaSecondary: "View Tables",
       tagText: "🎰 Real Indian Dealers",
@@ -56,8 +52,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
       title: "AVIATOR X, BALL BY BALL & CARD 32",
       subtitle:
         "Experience thrilling instant-result multiplier crash games. Cash out your winnings before the flight takes off!",
-      image:
-        "https://images.unsplash.com/photo-1511512578047-dfb367046420?q=80&w=1600&auto=format&fit=crop",
+      image: "/images/games/gameplay.webp",
       ctaPrimary: "Play Aviator Now",
       ctaSecondary: "Try Demo",
       tagText: "🚀 Up to 1000x Win",
@@ -73,10 +68,8 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
       title: "200% FIRST DEPOSIT BONUS UP TO ₹25,000",
       subtitle:
         "Activate your 200% matching refill bonus immediately via 24x7 verified WhatsApp support. Minimum deposit only ₹100.",
-      image:
-        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1600&auto=format&fit=crop",
+      image: "/images/games/playing-cards.webp",
       ctaPrimary: "Claim 200% Bonus",
-      ctaSecondary: "Download App",
       tagText: "🎁 Instant Activation",
       stat1: "₹100",
       stat1Label: "Min Deposit",
@@ -106,14 +99,14 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
   const slide = slides[currentSlide];
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-cyan-500/20 shadow-2xl bg-obsidian-950 mb-6 group">
+    <div className="relative overflow-hidden rounded-sm border border-emerald-500/25 shadow-xl bg-obsidian-950 mb-3 group">
       {/* Background Image Carousel Slider with Overlay */}
       <div className="absolute inset-0 z-0">
         {slides.map((s, idx) => (
           <div
             key={s.id}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              idx === currentSlide ? "opacity-100 scale-105" : "opacity-0 scale-100"
+              idx === currentSlide ? "opacity-200 scale-105" : "opacity-0 scale-100"
             }`}
             style={{ transition: "opacity 1s ease-in-out, transform 6s ease-out" }}
           >
@@ -123,23 +116,17 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
               alt={s.title}
               fill
               priority={idx === 0}
-              className="object-cover object-center filter brightness-[0.45]"
+              className="object-cover object-center filter brightness-[0.55]"
             />
           </div>
         ))}
-
-        {/* Ambient Dark Cyan & Slate Gradient Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-r from-obsidian-950 via-obsidian-950/85 to-obsidian-950/50" />
-        <div className="absolute inset-0 bg-gradient-to-t from-obsidian-950 via-transparent to-obsidian-950/60" />
-        <div className="absolute -top-24 -right-24 w-96 h-96 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
       </div>
 
       {/* Slide Content Layer */}
-      <div className="relative z-10 px-5 py-7 sm:px-9 sm:py-11 flex flex-col justify-between min-h-[320px] sm:min-h-[370px]">
+      <div className="relative z-10 px-5 py-4 sm:px-8 sm:py-5 flex flex-col justify-between min-h-[160px] sm:min-h-[170px]">
         <div>
           {/* Top Badges */}
-          <div className="flex flex-wrap items-center gap-2 mb-3">
+          <div className="hidden">
             <span
               className={`px-3 py-1 rounded-full text-[11px] font-black tracking-wider uppercase bg-obsidian-900/90 text-cyan-300 border ${slide.accentBorder} shadow-lg backdrop-blur-md`}
             >
@@ -152,18 +139,18 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
           </div>
 
           {/* Heading with Cyber Gradient */}
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight text-white max-w-3xl leading-tight">
+          <h2 className="text-lg sm:text-2xl lg:text-3xl font-black tracking-tight text-white max-w-3xl leading-tight drop-shadow-lg">
             {slide.title}
           </h2>
 
           {/* Subtitle */}
-          <p className="mt-3 text-xs sm:text-sm text-slate-300 max-w-2xl leading-relaxed font-medium">
+          <p className="hidden">
             {slide.subtitle}
           </p>
         </div>
 
         {/* CTAs and Real-Time Stats */}
-        <div className="mt-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-t border-cyan-500/15 pt-4">
+        <div className="mt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div className="flex items-center gap-3">
             <button
               onClick={onOpenWhatsApp}
@@ -172,22 +159,10 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
               <MessageCircle className="w-4 h-4 fill-obsidian-950" />
               <span>{slide.ctaPrimary}</span>
             </button>
-            <button
-              onClick={() => {
-                if (slide.ctaSecondary === "Download App") {
-                  onOpenApkModal();
-                } else {
-                  onOpenSignup();
-                }
-              }}
-              className="px-4 py-2.5 bg-obsidian-900/90 hover:bg-obsidian-800 text-cyan-300 font-bold text-xs sm:text-sm rounded-xl border border-cyan-500/30 hover:border-cyan-400 transition-all backdrop-blur-md"
-            >
-              {slide.ctaSecondary}
-            </button>
           </div>
 
           {/* Live Quick Stats */}
-          <div className="flex items-center space-x-6 text-right">
+          <div className="hidden sm:flex items-center space-x-5 text-right">
             <div>
               <p className="text-lg sm:text-xl font-black text-white">{slide.stat1}</p>
               <p className="text-[10px] sm:text-xs text-slate-400 font-semibold">

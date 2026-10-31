@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 :root {
-  --background: #06080e;
+  --background: #252a30;
   --foreground: #f1f5f9;
+  --brand-green: #116e52;
+  --brand-green-dark: #0c6247;
+  --brand-green-soft: rgba(17, 110, 82, 0.2);
+  --brand-border: rgba(255, 255, 255, 0.12);
 }
 
 body {
@@ -21,55 +25,175 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #06080e;
+  background: #1b2025;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #172238;
+  background: #3b4548;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #06b6d4;
+  background: #16835f;
 }
 
-/* Brand Gradients (Cyber Mint & Electric Cyan) */
+/* Brand colors match the reference site's green bars and gold logo. */
 .brand-gradient-text {
-  background: linear-gradient(135deg, #a5f3fc 0%, #22d3ee 40%, #10b981 100%);
+  background: linear-gradient(135deg, #fff2a1 0%, #f5d126 48%, #c99712 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .brand-gradient-bg {
-  background: linear-gradient(135deg, #06b6d4 0%, #0ea5e9 50%, #10b981 100%);
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
 }
 
 .brand-btn-primary {
-  background: linear-gradient(135deg, #06b6d4 0%, #10b981 100%);
-  color: #06080e;
+  background: linear-gradient(135deg, var(--brand-green) 0%, var(--brand-green-dark) 100%);
+  color: #ffffff;
   font-weight: 800;
-  box-shadow: 0 4px 20px -2px rgba(6, 182, 212, 0.4);
+  box-shadow: 0 4px 16px -2px rgba(8, 115, 79, 0.35);
   transition: all 0.2s ease-in-out;
 }
 
 .brand-btn-primary:hover {
-  background: linear-gradient(135deg, #22d3ee 0%, #34d399 100%);
-  box-shadow: 0 6px 24px -1px rgba(16, 185, 129, 0.5);
+  background: linear-gradient(135deg, #197b5c 0%, #0d684c 100%);
+  box-shadow: 0 6px 20px -1px rgba(16, 140, 94, 0.45);
   transform: translateY(-1px);
 }
 
 .brand-glass-panel {
-  background: rgba(11, 16, 27, 0.85);
+  background: rgba(30, 36, 40, 0.94);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(34, 211, 238, 0.15);
+  border: 1px solid rgba(46, 160, 112, 0.2);
 }
 
 .glow-cyan {
-  box-shadow: 0 0 25px -4px rgba(6, 182, 212, 0.35);
+  box-shadow: 0 0 18px -4px rgba(8, 115, 79, 0.3);
 }
 
 .glow-mint {
-  box-shadow: 0 0 25px -4px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 0 18px -4px rgba(16, 140, 94, 0.3);
+}
+
+[class*="text-cyan-"],
+[class*="text-emerald-"],
+[class*="text-teal-"],
+[class*="text-mint-"],
+[class*="text-sky-"],
+[class*="text-indigo-"],
+[class*="text-purple-"],
+[class*="text-pink-"],
+[class*="text-rose-"],
+[class*="text-amber-"],
+[class*="text-orange-"],
+[class*="text-red-"],
+[class*="text-yellow-"],
+[class*="text-lime-"],
+[class*="text-blue-"] {
+  color: #f1f3f3 !important;
+}
+
+[class*="border-cyan-"],
+[class*="border-emerald-"],
+[class*="border-teal-"],
+[class*="border-mint-"],
+[class*="border-sky-"],
+[class*="border-indigo-"],
+[class*="border-purple-"],
+[class*="border-pink-"],
+[class*="border-rose-"],
+[class*="border-amber-"],
+[class*="border-orange-"],
+[class*="border-red-"],
+[class*="border-yellow-"],
+[class*="border-lime-"],
+[class*="border-blue-"] {
+  border-color: var(--brand-border) !important;
+}
+
+[class*="bg-cyan-"],
+[class*="bg-emerald-"],
+[class*="bg-teal-"],
+[class*="bg-mint-"],
+[class*="bg-sky-"],
+[class*="bg-indigo-"],
+[class*="bg-purple-"],
+[class*="bg-pink-"],
+[class*="bg-rose-"],
+[class*="bg-amber-"],
+[class*="bg-orange-"],
+[class*="bg-red-"],
+[class*="bg-yellow-"],
+[class*="bg-lime-"],
+[class*="bg-blue-"] {
+  background-color: var(--brand-green-soft) !important;
+}
+
+[class*="from-cyan-"],
+[class*="from-emerald-"],
+[class*="from-teal-"],
+[class*="from-mint-"],
+[class*="from-sky-"],
+[class*="from-indigo-"],
+[class*="from-purple-"],
+[class*="from-pink-"],
+[class*="from-rose-"],
+[class*="from-amber-"],
+[class*="from-orange-"],
+[class*="from-red-"],
+[class*="from-yellow-"],
+[class*="from-lime-"],
+[class*="from-blue-"] {
+  --tw-gradient-from: var(--brand-green) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(17, 110, 82, 0) var(--tw-gradient-to-position) !important;
+}
+
+[class*="via-cyan-"],
+[class*="via-emerald-"],
+[class*="via-teal-"],
+[class*="via-mint-"],
+[class*="via-sky-"],
+[class*="via-indigo-"],
+[class*="via-purple-"],
+[class*="via-pink-"],
+[class*="via-rose-"],
+[class*="via-amber-"],
+[class*="via-orange-"],
+[class*="via-red-"],
+[class*="via-yellow-"],
+[class*="via-lime-"],
+[class*="via-blue-"] {
+  --tw-gradient-via: var(--brand-green) var(--tw-gradient-via-position) !important;
+}
+
+[class*="to-cyan-"],
+[class*="to-emerald-"],
+[class*="to-teal-"],
+[class*="to-mint-"],
+[class*="to-sky-"],
+[class*="to-indigo-"],
+[class*="to-purple-"],
+[class*="to-pink-"],
+[class*="to-rose-"],
+[class*="to-amber-"],
+[class*="to-orange-"],
+[class*="to-red-"],
+[class*="to-yellow-"],
+[class*="to-lime-"],
+[class*="to-blue-"] {
+  --tw-gradient-to: var(--brand-green-dark) var(--tw-gradient-to-position) !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* High-Contrast Exchange Back & Lay Odds */

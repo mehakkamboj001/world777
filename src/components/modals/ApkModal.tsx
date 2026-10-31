@@ -1,7 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
-import { X, Smartphone, Download, CheckCircle, ShieldCheck, Zap } from "lucide-react";
+import React from "react";
+import { X, Smartphone, CheckCircle, ShieldCheck, Zap } from "lucide-react";
 
 interface ApkModalProps {
   isOpen: boolean;
@@ -9,24 +9,8 @@ interface ApkModalProps {
 }
 
 export const ApkModal: React.FC<ApkModalProps> = ({ isOpen, onClose }) => {
-  const [downloading, setDownloading] = useState(false);
-  const [downloadProgress, setDownloadProgress] = useState(0);
 
   if (!isOpen) return null;
-
-  const handleStartDownload = () => {
-    setDownloading(true);
-    setDownloadProgress(10);
-    const interval = setInterval(() => {
-      setDownloadProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval);
-          return 100;
-        }
-        return prev + 25;
-      });
-    }, 400);
-  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in">
@@ -36,10 +20,6 @@ export const ApkModal: React.FC<ApkModalProps> = ({ isOpen, onClose }) => {
           <div className="flex items-center space-x-2.5">
             <div className="w-8 h-8 rounded-xl bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
               <Smartphone className="w-5 h-5" />
-            </div>
-            <div>
-              <h3 className="text-base font-extrabold text-white">Download Android App</h3>
-              <p className="text-[11px] text-slate-400">World777 Official APK (v3.8.4)</p>
             </div>
           </div>
           <button
@@ -91,37 +71,11 @@ export const ApkModal: React.FC<ApkModalProps> = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* Download Action */}
-          {downloading ? (
-            <div className="space-y-2 pt-2">
-              <div className="w-full bg-obsidian-950 rounded-full h-3 overflow-hidden border border-cyan-500/20">
-                <div
-                  className="bg-gradient-to-r from-cyan-400 to-emerald-400 h-full transition-all duration-300"
-                  style={{ width: `${downloadProgress}%` }}
-                />
-              </div>
-              <p className="text-xs font-bold text-white">
-                {downloadProgress === 100
-                  ? "APK Downloaded! Tap to Install."
-                  : `Downloading World777 APK... ${downloadProgress}%`}
-              </p>
-            </div>
-          ) : (
-            <button
-              onClick={handleStartDownload}
-              className="w-full py-3 brand-btn-primary font-black text-xs uppercase tracking-wider rounded-xl shadow-lg flex items-center justify-center space-x-2 transition-transform active:scale-95"
-            >
-              <Download className="w-4 h-4" />
-              <span>Download APK Now (14.2 MB)</span>
-            </button>
-          )}
-
           {/* Install Instructions */}
           <div className="text-[11px] text-slate-500 text-left pt-2 space-y-1">
             <p className="font-bold text-slate-400">Easy Installation Instructions:</p>
-            <p>1. Tap Download APK above.</p>
-            <p>2. In your device Settings, toggle &quot;Allow Unknown Sources&quot; if prompted.</p>
-            <p>3. Tap Install and open World777 to bet with ultra-fast speed.</p>
+            <p>1. In your device Settings, toggle &quot;Allow Unknown Sources&quot; if prompted.</p>
+            <p>2. Tap Install and open World777 to bet with ultra-fast speed.</p>
           </div>
         </div>
       </div>

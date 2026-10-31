@@ -6,9 +6,9 @@ import {
   Trash2,
   CheckCircle2,
   TrendingUp,
-  MessageCircle,
-  PhoneCall,
-  UserPlus,
+  CircleDot,
+  Spade,
+  Zap,
 } from "lucide-react";
 import confetti from "canvas-confetti";
 import { initialWinners, Match } from "@/data/mockData";
@@ -24,14 +24,12 @@ interface RightSidebarProps {
   selectedBet: SelectedBet | null;
   onClearBet: () => void;
   onOpenWhatsApp: () => void;
-  onOpenSignup: () => void;
 }
 
 export const RightSidebar: React.FC<RightSidebarProps> = ({
   selectedBet,
   onClearBet,
   onOpenWhatsApp,
-  onOpenSignup,
 }) => {
   const [stake, setStake] = useState<number>(500);
   const [betSuccess, setBetSuccess] = useState<boolean>(false);
@@ -82,9 +80,9 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
   };
 
   return (
-    <aside className="w-full space-y-4">
+    <aside className="w-full flex flex-col gap-2">
       {/* 1. Interactive Bet Slip */}
-      <div className="bg-obsidian-900 rounded-2xl border border-cyan-500/15 shadow-xl overflow-hidden">
+      <div className={selectedBet ? "order-2 bg-obsidian-900 rounded-sm border border-cyan-500/15 shadow-md overflow-hidden" : "hidden"}>
         {/* Bet Slip Header */}
         <div className="bg-gradient-to-r from-obsidian-950 to-obsidian-900 p-3.5 border-b border-cyan-500/10 flex items-center justify-between">
           <div className="flex items-center space-x-2">
@@ -229,35 +227,34 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
       </div>
 
       {/* 2. Live Winner Announcement Ticker */}
-      <div className="bg-obsidian-900 rounded-2xl border border-cyan-500/15 shadow-xl overflow-hidden">
-        <div className="bg-gradient-to-r from-obsidian-950 to-obsidian-900 p-3 border-b border-cyan-500/10 flex items-center justify-between">
+      <div className="order-1 bg-obsidian-900 rounded-sm border border-white/5 shadow-md overflow-hidden">
+        <div className="bg-[#116e52] px-2 py-2 border-b border-white/10 flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <Trophy className="w-4 h-4 text-cyan-400" />
-            <h3 className="text-xs font-black uppercase tracking-wider text-white">
-              Live Winner Announcements
+            <h3 className="text-[11px] font-bold text-white">
+              Winner Announcement
             </h3>
           </div>
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
         </div>
 
-        <div className="divide-y divide-cyan-500/10 max-h-64 overflow-y-auto no-scrollbar">
+        <div className="divide-y divide-white/5 max-h-64 overflow-y-auto no-scrollbar">
           {winners.map((winner) => (
             <div
               key={winner.id}
-              className="p-2.5 hover:bg-obsidian-850/60 transition-colors flex items-center justify-between text-xs"
+              className="px-2 py-2 hover:bg-obsidian-850/60 transition-colors flex items-start justify-between gap-1 text-[10px]"
             >
               <div>
                 <div className="flex items-center space-x-1.5">
                   <span className="font-bold text-slate-200">{winner.username}</span>
-                  <span className="text-[9px] text-slate-500">• {winner.timeAgo}</span>
                 </div>
-                <span className="text-[10px] text-slate-400 block truncate max-w-[140px]">
-                  {winner.game}
+                <span className="text-[9px] text-slate-500 block truncate max-w-[120px]">
+                  {winner.timeAgo}
                 </span>
               </div>
               <div className="text-right">
-                <span className="font-black text-emerald-400 text-xs block">
-                  +{winner.amount}
+                <span className="font-black text-slate-100 text-[10px] block">
+                  {winner.amount}
                 </span>
                 <span className="text-[9px] text-slate-500 uppercase">Won</span>
               </div>
@@ -266,36 +263,33 @@ export const RightSidebar: React.FC<RightSidebarProps> = ({
         </div>
       </div>
 
-      {/* 3. Fast WhatsApp & Sign Up Online ID Card */}
-      <div className="p-4 rounded-2xl bg-gradient-to-br from-emerald-950/90 via-obsidian-900 to-obsidian-950 border border-emerald-500/40 shadow-xl text-center space-y-3">
-        <div className="w-10 h-10 rounded-2xl bg-emerald-500/20 border border-emerald-400/30 flex items-center justify-center mx-auto text-emerald-400">
-          <MessageCircle className="w-5 h-5 fill-emerald-400" />
-        </div>
-        <div>
-          <h4 className="text-xs font-black uppercase tracking-wider text-white">
-            Get Verified Cricket ID
-          </h4>
-          <p className="text-[11px] text-slate-300 mt-0.5">
-            Instant 24x7 creation via WhatsApp. Minimum deposit ₹100.
-          </p>
-        </div>
-        <div className="space-y-2">
-          <button
-            onClick={onOpenWhatsApp}
-            className="w-full py-2 bg-[#25D366] hover:bg-[#20ba59] text-white font-extrabold text-xs rounded-xl shadow-md transition-all active:scale-95 flex items-center justify-center space-x-1.5"
-          >
-            <PhoneCall className="w-3.5 h-3.5" />
-            <span>Connect on WhatsApp</span>
-          </button>
-          <button
-            onClick={onOpenSignup}
-            className="w-full py-2 bg-obsidian-900 hover:bg-obsidian-850 text-cyan-300 font-bold text-xs rounded-xl border border-cyan-500/30 transition-all flex items-center justify-center space-x-1.5"
-          >
-            <UserPlus className="w-3.5 h-3.5" />
-            <span>Create Account Online</span>
-          </button>
+      <div className="order-3 bg-obsidian-900 rounded-sm border border-white/5 shadow-md overflow-hidden">
+        <div className="bg-[#116e52] px-2 py-2 text-[11px] font-bold text-white">New Launched</div>
+        <div className="grid grid-cols-1 gap-1 p-1">
+          {[
+            ["Roulette", "/images/games/casino-slots.webp", CircleDot],
+            ["Teen Patti", "/images/games/playing-cards.webp", Spade],
+            ["Race to 2nd", "/images/games/cricket-ground.webp", Zap],
+            ["Poker", "/images/games/playing-cards.webp", Spade],
+          ].map(([title, image, Icon]) => (
+            <button
+              key={title as string}
+              onClick={onOpenWhatsApp}
+              className="group relative h-[78px] w-full overflow-hidden rounded-sm border border-white/10 bg-cover bg-center text-left text-white shadow-sm"
+              style={{
+                backgroundImage: `linear-gradient(90deg, rgba(7, 12, 14, 0.72), rgba(7, 12, 14, 0.08)), url("${image}")`,
+              }}
+            >
+              <span className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/70 to-transparent" />
+              <span className="absolute bottom-2 left-2 flex items-center gap-1 text-xs font-black drop-shadow-lg">
+                <Icon className="h-3.5 w-3.5" />
+                {title as string}
+              </span>
+            </button>
+          ))}
         </div>
       </div>
+
     </aside>
   );
 };

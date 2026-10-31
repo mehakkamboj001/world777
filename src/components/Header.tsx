@@ -23,7 +23,6 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenLogin,
   onOpenSignup,
   onOpenSeoModal,
-  onOpenApkModal,
   onOpenWhatsApp,
 }) => {
   const [username, setUsername] = useState("");
@@ -38,7 +37,7 @@ export const Header: React.FC<HeaderProps> = ({
   return (
     <header className="sticky top-0 z-40 w-full bg-obsidian-950/95 backdrop-blur-md border-b border-cyan-500/15 shadow-xl">
       {/* Top micro bar for announcements & trust */}
-      <div className="bg-gradient-to-r from-obsidian-950 via-obsidian-900 to-obsidian-950 px-4 py-1 text-xs border-b border-cyan-500/10 hidden sm:flex justify-between items-center text-slate-300">
+      <div className="hidden">
         <div className="flex items-center space-x-4">
           <span className="flex items-center text-emerald-400 font-semibold">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping mr-1.5" />
@@ -79,7 +78,7 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main navigation row */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+      <div className="max-w-[1440px] mx-auto px-3 sm:px-5 h-14 flex items-center justify-between gap-3">
         {/* Brand Logo */}
         <div className="flex items-center space-x-3">
           <a href="/" className="flex items-center space-x-2.5 group">
@@ -204,15 +203,6 @@ export const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="flex gap-2">
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenApkModal();
-              }}
-              className="flex-1 py-2 bg-obsidian-900 border border-emerald-500/30 text-emerald-300 font-semibold text-xs rounded-xl text-center"
-            >
-              Download Android APK
-            </button>
             <button
               onClick={() => {
                 setMobileMenuOpen(false);

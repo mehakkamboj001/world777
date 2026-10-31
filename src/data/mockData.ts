@@ -50,16 +50,19 @@ export interface WinnerAnnouncement {
 }
 
 export const sportsCategories: SportCategory[] = [
+  { id: "politics", name: "Politics & Elections", iconName: "Vote", liveCount: 3 },
   { id: "cricket", name: "Cricket", iconName: "Trophy", liveCount: 8 },
   { id: "football", name: "Football", iconName: "Flame", liveCount: 19 },
   { id: "tennis", name: "Tennis", iconName: "Activity", liveCount: 6 },
-  { id: "kabaddi", name: "Kabaddi", iconName: "Shield", liveCount: 2 },
-  { id: "politics", name: "Politics & Elections", iconName: "Vote", liveCount: 3 },
+  { id: "tabletennis", name: "Table Tennis", iconName: "CircleDot", liveCount: 5 },
+  { id: "basketball", name: "Basketball", iconName: "Dumbbell", liveCount: 4 },
+  { id: "volleyball", name: "Volleyball", iconName: "Shield", liveCount: 3 },
+  { id: "snooker", name: "Snooker", iconName: "CircleDot", liveCount: 2 },
   { id: "icehockey", name: "Ice Hockey", iconName: "Sparkles", liveCount: 4 },
-  { id: "egames", name: "E-Games / Virtuals", iconName: "Gamepad2", liveCount: 11 },
+  { id: "egames", name: "E Games", iconName: "Gamepad2", liveCount: 11 },
   { id: "futsal", name: "Futsal", iconName: "CircleDot", liveCount: 3 },
   { id: "handball", name: "Handball", iconName: "Dumbbell", liveCount: 5 },
-  { id: "horseracing", name: "Horse Racing", iconName: "Zap", liveCount: 7 },
+  { id: "kabaddi", name: "Kabaddi", iconName: "Shield", liveCount: 2 },
 ];
 
 export const mockMatches: Match[] = [

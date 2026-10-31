@@ -7,10 +7,8 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/admin/", "/private/"],
       },
     ],
-    sitemap: `${siteSEO.canonicalUrl}/sitemap.xml`,
+    sitemap: new URL("/sitemap.xml", siteSEO.canonicalUrl).toString(),
   };
 }
-
