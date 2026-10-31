@@ -16,10 +16,10 @@ export interface SiteSEOConfig {
 export const siteSEO: SiteSEOConfig = {
   siteName: "World777",
   brandTagline: "Sports exchange, fantasy games and live casino",
-  defaultTitle: "World777 | Sports Exchange, Fantasy Games & Live Casino",
+  defaultTitle: "World777 Sports Exchange, Fantasy Games & Live Casino",
   titleTemplate: "%s | World777",
   description:
-    "Explore sports exchange markets, fantasy games and live casino categories on World777. Review the information on this page. 18+ only; play responsibly.",
+    "Explore World777 sports exchange, Fantasy Games, Live Casino and slots. Browse sports categories and Back and Lay guides. Adults 18+ only; play responsibly.",
   canonicalUrl: "https://www.world777.com.in/",
   keywords: [
     "world777",

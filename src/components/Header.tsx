@@ -10,6 +10,7 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { siteSEO } from "@/config/seo";
+import { BrandMark } from "@/components/BrandMark";
 
 interface HeaderProps {
   onOpenLogin: () => void;
@@ -82,14 +83,7 @@ export const Header: React.FC<HeaderProps> = ({
         {/* Brand Logo */}
         <div className="flex items-center space-x-3">
           <a href="/" className="flex items-center space-x-2.5 group">
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 via-teal-500 to-emerald-500 p-0.5 shadow-lg shadow-cyan-500/25 group-hover:scale-105 transition-transform">
-              <div className="w-full h-full bg-obsidian-950 rounded-[10px] flex items-center justify-center">
-                <span className="text-lg font-black tracking-tighter brand-gradient-text">
-                  777
-                </span>
-              </div>
-              <div className="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border-2 border-obsidian-950" />
-            </div>
+            <BrandMark className="h-10 w-10 transition-transform group-hover:scale-105" />
             <div className="flex flex-col">
               <span className="text-xl sm:text-2xl font-extrabold tracking-wider text-white flex items-center">
                 WORLD<span className="brand-gradient-text ml-1">777</span>

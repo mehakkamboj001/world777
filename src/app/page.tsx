@@ -74,8 +74,8 @@ export default function Home() {
       />
 
       {/* 3. Main 3-Column Content Layout */}
-      <main className="flex-1 max-w-[1440px] w-full mx-auto px-2 sm:px-3 lg:px-4 py-2">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-2.5">
+      <main className="flex-1 max-w-[1440px] w-full mx-auto px-2 sm:px-3 lg:px-4 py-3">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-3">
           {/* Left Sidebar: Sports Categories & Live badges */}
           <div className="hidden lg:block lg:col-span-2">
             <LeftSidebar
@@ -86,7 +86,7 @@ export default function Home() {
           </div>
 
           {/* Center Column: Hero Carousel, Match Exchange, Games, SEO Articles */}
-          <div className="col-span-12 lg:col-span-8 space-y-3">
+          <div className="col-span-12 lg:col-span-8 space-y-4">
             {/* Hero Banner Carousel */}
             <HeroCarousel
               onOpenWhatsApp={openWhatsApp}

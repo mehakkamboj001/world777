@@ -3,6 +3,7 @@
 import React from "react";
 import { Lock, PhoneCall, Send, Sparkles } from "lucide-react";
 import { siteSEO } from "@/config/seo";
+import { BrandMark } from "@/components/BrandMark";
 
 interface FooterProps {
   onOpenLogin: () => void;
@@ -60,23 +61,19 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Brand & Mission */}
         <div className="space-y-3">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-cyan-400 to-emerald-500 p-0.5">
-              <div className="w-full h-full bg-obsidian-950 rounded-[9px] flex items-center justify-center font-black text-xs brand-gradient-text">
-                777
-              </div>
-            </div>
+            <BrandMark className="h-8 w-8 rounded-lg" />
             <span className="text-lg font-black text-white tracking-wider">
               WORLD<span className="brand-gradient-text">777</span>
             </span>
           </div>
           <p className="text-xs text-slate-400 leading-relaxed font-medium">
-            World777 is India&apos;s most reliable sports exchange and online entertainment portal,
-            offering high liquidity Back & Lay betting, live casino tables, and guaranteed 90-second
-            UPI withdrawals.
+            Explore sports exchange markets, Fantasy Games, Live Casino and slots
+            from one responsive World777 page. Market and game listings may change;
+            review the rules before participating.
           </p>
           <div className="pt-1 flex items-center space-x-2 text-slate-500 text-[11px]">
             <Lock className="w-3.5 h-3.5 text-emerald-400" />
-            <span>256-Bit SSL Encrypted Gaming</span>
+            <span>Adults 18+ only · Play responsibly</span>
           </div>
         </div>
 
