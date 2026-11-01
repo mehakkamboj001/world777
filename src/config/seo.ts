@@ -16,10 +16,10 @@ export interface SiteSEOConfig {
 export const siteSEO: SiteSEOConfig = {
   siteName: "World777",
   brandTagline: "Sports exchange, fantasy games and live casino",
-  defaultTitle: "World777 Sports Exchange, Fantasy Games & Live Casino",
+  defaultTitle: "World777 | Sports Exchange, Fantasy Games & Live Casino",
   titleTemplate: "%s | World777",
   description:
-    "Explore World777 sports exchange, Fantasy Games, Live Casino and slots. Browse sports categories and Back and Lay guides. Adults 18+ only; play responsibly.",
+    "Explore World777 sports exchange, Fantasy Games, Live Casino and slots. Learn about Back and Lay selections; match listings are illustrative. Adults 18+ only.",
   canonicalUrl: "https://world777.store/",
   keywords: [
     "world777",
@@ -37,29 +37,29 @@ export const siteSEO: SiteSEOConfig = {
 
 export const faqs = [
   {
-    question: "What can I find on this World777 page?",
+    question: "What can I find on the World777 homepage?",
     answer:
-      "This page groups sports exchange markets, Fantasy Games, Live Casino and slots. Game and market availability may change; review the information shown on the page.",
+      "The homepage brings together sports exchange categories, example match listings, Fantasy Games, Live Casino and slots. The match data is illustrative, and game or market availability may change. Check the applicable rules and terms before participating.",
   },
   {
-    question: "What do Back and Lay mean in an exchange market?",
+    question: "What do Back and Lay mean in a sports exchange?",
     answer:
-      "Back means selecting an outcome to happen; Lay means selecting an outcome not to happen. Review the market rules, odds and potential liability before taking part.",
+      "Back means selecting an outcome that you expect to happen. Lay means selecting an outcome that you expect not to happen; a lay selection can involve liability if the outcome does happen. Review the odds, market rules and potential liability before making a selection.",
   },
   {
-    question: "Are the match odds on this page live?",
+    question: "Are the scores and odds shown on the homepage live?",
     answer:
-      "The match rows shown here are example interface data and are not a live odds feed. Do not rely on them for current scores, prices or betting decisions.",
+      "No. The match rows, scores and odds on this homepage are illustrative interface data, not a live feed. They may not reflect current events or prices and should not be used to make decisions.",
   },
   {
-    question: "Which game categories are listed?",
+    question: "Which game categories does the homepage show?",
     answer:
-      "The page lists Fantasy Games, Live Casino and slots. The visible game cards are examples of categories and titles; availability can change.",
+      "The page has separate sections for Fantasy Games, Live Casino and slots. Game cards are examples of titles and categories; actual availability can change.",
   },
   {
-    question: "Who should use this site?",
+    question: "Who should access gaming content on this site?",
     answer:
-      "This site is intended for adults aged 18 or older. Laws differ by location; check the rules that apply where you live and do not participate if it is restricted.",
+      "This site is intended for adults aged 18 or older. Laws and eligibility requirements vary by location. Check the rules that apply where you live and do not participate if it is restricted.",
   },
 ];
 

@@ -124,7 +124,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
                 {getIcon(sport.iconName)}
                 <span className="truncate">{sport.name}</span>
               </div>
-              <span className="text-[10px] text-slate-500 px-1 font-bold">{sport.liveCount}</span>
+              <span className="text-[10px] text-slate-500 px-1 font-bold">{sport.liveCount} examples</span>
             </button>
           );
         })}

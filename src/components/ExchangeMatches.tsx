@@ -37,8 +37,8 @@ export const ExchangeMatches: React.FC<ExchangeMatchesProps> = ({
           <div>
             <h2 className="text-sm font-extrabold text-white flex items-center gap-2">
               <span>Sports Exchange</span>
-              <span className="text-[9px] bg-rose-500/20 text-rose-400 border border-rose-500/40 px-1.5 py-0.5 rounded-sm font-bold uppercase animate-pulse">
-                Live
+              <span className="text-[9px] bg-amber-500/10 text-amber-300 border border-amber-500/30 px-1.5 py-0.5 rounded-sm font-bold uppercase">
+                Example data — not live
               </span>
             </h2>
           </div>
@@ -54,7 +54,7 @@ export const ExchangeMatches: React.FC<ExchangeMatchesProps> = ({
                 : "text-slate-400 hover:text-slate-200"
             }`}
           >
-            All ({mockMatches.length})
+            All examples ({mockMatches.length})
           </button>
           <button
             onClick={() => setFilter("LIVE")}
@@ -65,7 +65,7 @@ export const ExchangeMatches: React.FC<ExchangeMatchesProps> = ({
             }`}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-rose-400 animate-ping mr-1" />
-            Live Now
+            Live examples
           </button>
           <button
             onClick={() => setFilter("UPCOMING")}
@@ -75,7 +75,7 @@ export const ExchangeMatches: React.FC<ExchangeMatchesProps> = ({
                 : "text-slate-400 hover:text-slate-200"
             }`}
           >
-            Upcoming
+            Upcoming examples
           </button>
         </div>
       </div>
@@ -84,7 +84,7 @@ export const ExchangeMatches: React.FC<ExchangeMatchesProps> = ({
       <div className="space-y-1">
         {filteredMatches.length === 0 ? (
           <div className="text-center py-10 bg-obsidian-900/50 rounded-2xl border border-cyan-500/15 text-slate-400 text-sm">
-            No matches found in this category right now. Select &quot;All Live Markets&quot; above.
+            No example matches found in this category. Select &quot;All examples&quot; above.
           </div>
         ) : (
           filteredMatches.map((match) => (
@@ -105,7 +105,7 @@ export const ExchangeMatches: React.FC<ExchangeMatchesProps> = ({
                   {match.status === "LIVE" ? (
                     <span className="flex items-center space-x-1 text-emerald-400 font-bold text-[11px] bg-emerald-500/10 px-2 py-0.5 rounded-md border border-emerald-500/20">
                       <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                      <span>IN-PLAY</span>
+                      <span>Example in-play status</span>
                     </span>
                   ) : (
                     <span className="flex items-center space-x-1 text-slate-400 text-[11px]">

@@ -24,9 +24,9 @@ export const SeoArticleSection: React.FC<SeoArticleSectionProps> = ({
         <p className="text-xs font-bold uppercase tracking-widest text-cyan-400">
           Platform guide
         </p>
-        <h1 className="text-xl font-black leading-snug tracking-tight text-white sm:text-3xl">
-          World777 Sports Exchange, Fantasy Games and Live Casino
-        </h1>
+        <h2 className="text-xl font-black leading-snug tracking-tight text-white sm:text-3xl">
+          World777 homepage guide
+        </h2>
         <p className="text-xs font-medium leading-relaxed text-slate-300 sm:text-sm">
           Find the World777 sports exchange, Fantasy Games, Live Casino and slots
           in one place. Browse sports categories including cricket, football,
@@ -37,12 +37,12 @@ export const SeoArticleSection: React.FC<SeoArticleSectionProps> = ({
       </header>
 
       <section aria-labelledby="sports-exchange-guide">
-        <h2
+        <h3
           id="sports-exchange-guide"
           className="mb-2 text-base font-bold text-white sm:text-xl"
         >
           Sports exchange markets
-        </h2>
+        </h3>
         <p className="text-xs leading-relaxed sm:text-sm">
           Sports exchange markets organize events by sport. A Back selection is
           for an outcome to happen; a Lay selection is for an outcome not to
@@ -53,12 +53,12 @@ export const SeoArticleSection: React.FC<SeoArticleSectionProps> = ({
       </section>
 
       <section aria-labelledby="game-categories-guide">
-        <h2
+        <h3
           id="game-categories-guide"
           className="mb-2 text-base font-bold text-white sm:text-xl"
         >
           Fantasy Games, Live Casino and slots
-        </h2>
+        </h3>
         <p className="text-xs leading-relaxed sm:text-sm">
           The Fantasy Games section includes example instant-play and cricket
           titles. Live Casino and Slots have their own sections, making it easier
@@ -69,12 +69,12 @@ export const SeoArticleSection: React.FC<SeoArticleSectionProps> = ({
       </section>
 
       <section aria-labelledby="responsible-play">
-        <h2
+        <h3
           id="responsible-play"
           className="mb-2 text-base font-bold text-white sm:text-xl"
         >
           Check local rules and play responsibly
-        </h2>
+        </h3>
         <p className="text-xs leading-relaxed sm:text-sm">
           This site is intended for adults aged 18 and over. Laws vary by
           location, so check the rules that apply where you live and do not
@@ -90,9 +90,9 @@ export const SeoArticleSection: React.FC<SeoArticleSectionProps> = ({
       >
         <div className="flex items-center gap-2">
           <HelpCircle className="h-5 w-5 text-cyan-400" aria-hidden="true" />
-          <h2 id="faq-heading" className="text-base font-bold text-white sm:text-xl">
+          <h3 id="faq-heading" className="text-base font-bold text-white sm:text-xl">
             Frequently asked questions
-          </h2>
+          </h3>
         </div>
         <div className="space-y-2">
           {faqs.map((faq, index) => {
@@ -134,9 +134,9 @@ export const SeoArticleSection: React.FC<SeoArticleSectionProps> = ({
       </section>
 
       <section className="space-y-3 rounded-2xl border border-cyan-500/20 bg-obsidian-950 p-5 text-center">
-        <h2 className="text-base font-bold text-white sm:text-lg">
+        <h3 className="text-base font-bold text-white sm:text-lg">
           Need more information?
-        </h2>
+        </h3>
         <p className="mx-auto max-w-xl text-xs leading-relaxed text-slate-300">
           Review the information and terms available on the platform before
           creating an account or taking part.

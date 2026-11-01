@@ -2,79 +2,72 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, MessageCircle } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowDown } from "lucide-react";
 
-interface HeroCarouselProps {
-  onOpenWhatsApp: () => void;
-  onOpenSignup: () => void;
-  onOpenApkModal: () => void;
-}
-
-export const HeroCarousel: React.FC<HeroCarouselProps> = ({
-  onOpenWhatsApp,
-}) => {
+export const HeroCarousel: React.FC = () => {
   const slides = [
     {
       id: 1,
-      badge: "IPL & ICC T20 IN-PLAY EXCHANGE",
-      title: "LIVE CRICKET BACK & LAY SPORTS EXCHANGE",
+      badge: "SPORTS EXCHANGE",
+      title: "Explore sports exchange markets",
       subtitle:
-        "Trade live in-play cricket odds with highest liquidity, 0% commission, and automated 90-second UPI payouts.",
+        "Browse sports categories and learn how Back and Lay selections work.",
       image: "/images/games/cricket-ground.webp",
-      ctaPrimary: "Get Cricket ID",
-      ctaSecondary: "Free Demo ID",
-      tagText: "⚡ Live In-Play Odds",
-      stat1: "1.48 vs 2.95",
-      stat1Label: "Top Cricket Odds",
-      stat2: "90 Sec",
-      stat2Label: "Instant UPI Cashout",
+      imageAlt: "Illustration of a cricket ground",
+      ctaPrimary: "Browse sports",
+      href: "#exchange",
+      stat1: "Back",
+      stat1Label: "Select an outcome",
+      stat2: "Lay",
+      stat2Label: "Select against an outcome",
       accentBorder: "border-cyan-500/40",
     },
     {
       id: 2,
-      badge: "LIVE DEALER CASINO",
-      title: "TEEN PATTI, HINDI ROULETTE & BACCARAT",
+      badge: "LIVE CASINO",
+      title: "Browse the Live Casino section",
       subtitle:
-        "Stream crystal-clear 4K tables with native Hindi-speaking dealers, lightning multipliers up to 500x, and VIP high-roller suites.",
+        "Explore the casino category and review the rules for each listed game.",
       image: "/images/games/casino-slots.webp",
-      ctaPrimary: "Join Live Casino",
-      ctaSecondary: "View Tables",
-      tagText: "🎰 Real Indian Dealers",
-      stat1: "500+",
-      stat1Label: "Live Tables 24/7",
-      stat2: "500X",
-      stat2Label: "Lightning Multiplier",
+      imageAlt: "Illustration of casino games",
+      ctaPrimary: "View Live Casino",
+      href: "#casino",
+      stat1: "Casino",
+      stat1Label: "Game category",
+      stat2: "18+",
+      stat2Label: "Adults only",
       accentBorder: "border-emerald-500/40",
     },
     {
       id: 3,
-      badge: "HIGH MULTIPLIER CRASH",
-      title: "AVIATOR X, BALL BY BALL & CARD 32",
+      badge: "FANTASY GAMES",
+      title: "Discover Fantasy Games",
       subtitle:
-        "Experience thrilling instant-result multiplier crash games. Cash out your winnings before the flight takes off!",
+        "Browse example game titles and check availability and rules before playing.",
       image: "/images/games/gameplay.webp",
-      ctaPrimary: "Play Aviator Now",
-      ctaSecondary: "Try Demo",
-      tagText: "🚀 Up to 1000x Win",
-      stat1: "97.0%",
-      stat1Label: "Certified RTP",
-      stat2: "10,000+",
-      stat2Label: "Live Online Players",
+      imageAlt: "Illustration of instant-play game artwork",
+      ctaPrimary: "Browse games",
+      href: "#fantasy",
+      stat1: "Titles",
+      stat1Label: "Example listings",
+      stat2: "Rules",
+      stat2Label: "Check before playing",
       accentBorder: "border-sky-500/40",
     },
     {
       id: 4,
-      badge: "EXCLUSIVE SIGNUP BONUS",
-      title: "200% FIRST DEPOSIT BONUS UP TO ₹25,000",
+      badge: "SLOTS",
+      title: "Explore the slots section",
       subtitle:
-        "Activate your 200% matching refill bonus immediately via 24x7 verified WhatsApp support. Minimum deposit only ₹100.",
+        "Find the slots category on the homepage; game availability may vary.",
       image: "/images/games/playing-cards.webp",
-      ctaPrimary: "Claim 200% Bonus",
-      tagText: "🎁 Instant Activation",
-      stat1: "₹100",
-      stat1Label: "Min Deposit",
-      stat2: "24/7",
-      stat2Label: "WhatsApp Support",
+      imageAlt: "Illustration of playing cards",
+      ctaPrimary: "View slots",
+      href: "#slots",
+      stat1: "Slots",
+      stat1Label: "Game category",
+      stat2: "18+",
+      stat2Label: "Adults only",
       accentBorder: "border-cyan-400/40",
     },
   ];
@@ -113,7 +106,7 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
             {/* Real Banner Image with Next.js Image Optimization */}
             <Image
               src={s.image}
-              alt={s.title}
+              alt={idx === currentSlide ? s.imageAlt : ""}
               fill
               priority={idx === 0}
               className="object-cover object-center filter brightness-[0.55]"
@@ -123,42 +116,29 @@ export const HeroCarousel: React.FC<HeroCarouselProps> = ({
       </div>
 
       {/* Slide Content Layer */}
-      <div className="relative z-10 px-5 py-4 sm:px-8 sm:py-5 flex flex-col justify-between min-h-[160px] sm:min-h-[170px]">
+      <div className="relative z-10 px-5 pb-10 pt-5 sm:px-8 sm:pb-10 sm:pt-6 flex flex-col justify-between min-h-[220px]">
         <div>
-          {/* Top Badges */}
-          <div className="hidden">
-            <span
-              className={`px-3 py-1 rounded-full text-[11px] font-black tracking-wider uppercase bg-obsidian-900/90 text-cyan-300 border ${slide.accentBorder} shadow-lg backdrop-blur-md`}
-            >
-              {slide.badge}
-            </span>
-            <span className="px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-500/30 flex items-center gap-1.5 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
-              <span>{slide.tagText}</span>
-            </span>
-          </div>
-
-          {/* Heading with Cyber Gradient */}
-          <h2 className="text-lg sm:text-2xl lg:text-3xl font-black tracking-tight text-white max-w-3xl leading-tight drop-shadow-lg">
+          <h1 className="mb-2 max-w-3xl text-xl font-black leading-tight tracking-tight text-white drop-shadow-lg sm:text-3xl">
+            World777 sports exchange, Fantasy Games, Live Casino and slots
+          </h1>
+          <h2 className="text-base sm:text-xl lg:text-2xl font-black tracking-tight text-white max-w-3xl leading-tight drop-shadow-lg">
             {slide.title}
           </h2>
-
-          {/* Subtitle */}
-          <p className="hidden">
+          <p className="mt-1 max-w-2xl text-xs leading-relaxed text-white/85 sm:text-sm">
             {slide.subtitle}
           </p>
         </div>
 
-        {/* CTAs and Real-Time Stats */}
+        {/* Section links and category details */}
         <div className="mt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div className="flex items-center gap-3">
-            <button
-              onClick={onOpenWhatsApp}
+            <a
+              href={slide.href}
               className="px-5 py-2.5 brand-btn-primary rounded-xl text-xs sm:text-sm font-black flex items-center space-x-2 shadow-lg transition-transform active:scale-95"
             >
-              <MessageCircle className="w-4 h-4 fill-obsidian-950" />
+              <ArrowDown className="w-4 h-4" aria-hidden="true" />
               <span>{slide.ctaPrimary}</span>
-            </button>
+            </a>
           </div>
 
           {/* Live Quick Stats */}

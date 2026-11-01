@@ -24,8 +24,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   icons: {
-    icon: "/icon.svg",
-    shortcut: "/icon.svg",
+    icon: [
+      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.png",
   },
   metadataBase: new URL(siteSEO.canonicalUrl),
   title: {

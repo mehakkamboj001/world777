@@ -88,11 +88,7 @@ export default function Home() {
           {/* Center Column: Hero Carousel, Match Exchange, Games, SEO Articles */}
           <div className="col-span-12 lg:col-span-8 space-y-4">
             {/* Hero Banner Carousel */}
-            <HeroCarousel
-              onOpenWhatsApp={openWhatsApp}
-              onOpenSignup={() => setSignupModalOpen(true)}
-              onOpenApkModal={() => setApkModalOpen(true)}
-            />
+            <HeroCarousel />
 
             {/* In-Play Sports Betting Exchange */}
             <ExchangeMatches
