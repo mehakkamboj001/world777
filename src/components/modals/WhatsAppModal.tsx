@@ -72,7 +72,7 @@ export const WhatsAppModal: React.FC<WhatsAppModalProps> = ({ isOpen, onClose })
             </label>
             <div className="grid grid-cols-2 gap-2">
               {[
-                { id: "NEW_ID", label: "Get New ID (+200% Bonus)" },
+                { id: "NEW_ID", label: "I NEED WORLD777 ID (+200% Bonus)" },
                 { id: "DEMO_ID", label: "Get Free Demo ID" },
                 { id: "DEPOSIT", label: "Deposit / Add Funds" },
                 { id: "WITHDRAWAL", label: "Instant Cashout" },

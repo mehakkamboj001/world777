@@ -35,7 +35,7 @@ export default function Home() {
 
   // Direct WhatsApp opener — reads number from src/config/seo.ts → contactWhatsApp
   const openWhatsApp = () => {
-    window.open(getWhatsAppUrl("get new id"), "_blank", "noopener,noreferrer");
+    window.open(getWhatsAppUrl("I NEED WORLD777 🆔"), "_blank", "noopener,noreferrer");
   };
 
   const handleSelectBet = (
@@ -136,14 +136,14 @@ export default function Home() {
         onOpenWhatsApp={openWhatsApp}
       />
 
-      {/* Floating Action Button (Direct WhatsApp with 'get new id') */}
+      {/* Floating Action Button (Direct WhatsApp with 'I NEED WORLD777 ID') */}
       <div className="fixed bottom-6 right-6 z-40">
         <a
-          href={getWhatsAppUrl("get new id")}
+          href={getWhatsAppUrl("I NEED WORLD777 ID")}
           target="_blank"
           rel="noopener noreferrer"
           className="group relative flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] hover:bg-[#20ba59] text-white rounded-full shadow-[0_8px_30px_rgba(37,211,102,0.45)] hover:shadow-[0_10px_35px_rgba(37,211,102,0.65)] transition-all duration-300 hover:scale-110 active:scale-95"
-          title="Chat on WhatsApp - Get New ID"
+          title="Chat on WhatsApp - I NEED WORLD777 ID"
         >
           {/* Animated pulsing wave rings */}
           <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-75 animate-ping -z-10" />
@@ -160,7 +160,7 @@ export default function Home() {
 
           {/* Hover Tooltip Pill */}
           <span className="absolute right-full mr-3 px-3 py-1.5 bg-navy-950/95 text-white text-xs font-bold rounded-xl border border-emerald-500/40 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-            Get New ID on WhatsApp
+            I NEED WORLD777 ID on WhatsApp
           </span>
         </a>
       </div>

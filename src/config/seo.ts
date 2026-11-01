@@ -30,7 +30,7 @@ export const siteSEO: SiteSEOConfig = {
   ],
   locale: "en_IN",
   themeColor: "#116e52",
-  contactWhatsApp: "+919876543210",
+  contactWhatsApp: "+917009784942",
   contactTelegram: "https://t.me/world777official",
   supportEmail: "contact@world777.com.in",
 };
@@ -65,7 +65,7 @@ export const faqs = [
 
 // ─── Central WhatsApp helper ───────────────────────────────────────────────
 // Change contactWhatsApp above to update ALL buttons across the site.
-export function getWhatsAppUrl(message: string = "get new id"): string {
+export function getWhatsAppUrl(message: string = "I NEED WORLD777 ID"): string {
   const clean = siteSEO.contactWhatsApp.replace(/[^0-9]/g, "");
   return `https://wa.me/${clean}?text=${encodeURIComponent(message)}`;
 }
