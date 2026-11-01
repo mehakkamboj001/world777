@@ -28,11 +28,11 @@ export const SeoArticleSection: React.FC<SeoArticleSectionProps> = ({
           World777 homepage guide
         </h2>
         <p className="text-xs font-medium leading-relaxed text-slate-300 sm:text-sm">
-          Find the World777 sports exchange, Fantasy Games, Live Casino and slots
-          in one place. Browse sports categories including cricket, football,
-          tennis and more, then explore the game sections below. Listings and
-          availability may change, so review the applicable rules before taking
-          part.
+          This World777 homepage brings its sports exchange guide, Fantasy Games,
+          Live Casino and slots categories together. Browse example sports
+          categories such as cricket, football and tennis, or use the page links
+          to find a game section. Match and game listings are illustrative;
+          availability and rules can change.
         </p>
       </header>
 
@@ -44,11 +44,13 @@ export const SeoArticleSection: React.FC<SeoArticleSectionProps> = ({
           Sports exchange markets
         </h3>
         <p className="text-xs leading-relaxed sm:text-sm">
-          Sports exchange markets organize events by sport. A Back selection is
-          for an outcome to happen; a Lay selection is for an outcome not to
-          happen. Always check the market, odds and potential liability before
-          placing a selection. Match rows on this page are example interface
-          data, not a live score or odds feed.
+          A sports exchange groups markets by event and sport. In a Back
+          selection, a person chooses an outcome they expect to happen; in a Lay
+          selection, they choose an outcome they expect not to happen. A Lay
+          selection can carry liability if that outcome occurs. Review the
+          market rules and potential liability. Cricket, football
+          and other match rows are sample interface data, not live sports
+          exchange markets, scores or odds.
         </p>
       </section>
 
@@ -60,11 +62,11 @@ export const SeoArticleSection: React.FC<SeoArticleSectionProps> = ({
           Fantasy Games, Live Casino and slots
         </h3>
         <p className="text-xs leading-relaxed sm:text-sm">
-          The Fantasy Games section includes example instant-play and cricket
-          titles. Live Casino and Slots have their own sections, making it easier
-          to browse each category. Titles shown are examples; actual games and
-          availability can vary. Read the rules and terms for a game before you
-          play.
+          Separate homepage sections make it easier to browse Fantasy Games,
+          Live Casino games and slots. The visible cards are examples of game
+          categories and titles, not a guarantee that a particular title is
+          available. Check the rules and terms for each game before
+          participating.
         </p>
       </section>
 

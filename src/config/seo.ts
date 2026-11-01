@@ -13,6 +13,42 @@ export interface SiteSEOConfig {
   supportEmail: string;
 }
 
+export const primaryKeywords = [
+  "World777",
+  "World 777",
+  "World777 sports exchange",
+  "World777 Fantasy Games",
+  "World777 Live Casino",
+  "World777 slots",
+];
+
+export const secondaryKeywords = [
+  "sports exchange markets",
+  "sports exchange guide",
+  "cricket sports exchange",
+  "football sports exchange",
+  "tennis sports exchange",
+  "Back and Lay meaning",
+  "Back and Lay in sports exchange",
+  "sports match markets",
+  "Fantasy Games categories",
+  "fantasy game listings",
+  "instant-play game categories",
+  "Live Casino games",
+  "live casino categories",
+  "casino table games",
+  "slots game categories",
+  "online slots games",
+  "World777 homepage",
+  "World777 sports categories",
+  "World777 game categories",
+  "sports exchange for beginners",
+  "how sports exchange markets work",
+  "how Back and Lay selections work",
+  "responsible gaming information",
+  "18+ gaming information",
+];
+
 export const siteSEO: SiteSEOConfig = {
   siteName: "World777",
   brandTagline: "Sports exchange, fantasy games and live casino",
@@ -21,13 +57,7 @@ export const siteSEO: SiteSEOConfig = {
   description:
     "Explore World777 sports exchange, Fantasy Games, Live Casino and slots. Learn about Back and Lay selections; match listings are illustrative. Adults 18+ only.",
   canonicalUrl: "https://world777.store/",
-  keywords: [
-    "world777",
-    "world 777",
-    "sports betting exchange",
-    "fantasy games",
-    "live casino",
-  ],
+  keywords: [...primaryKeywords, ...secondaryKeywords],
   locale: "en_IN",
   themeColor: "#116e52",
   contactWhatsApp: "+917009784942",
@@ -45,6 +75,16 @@ export const faqs = [
     question: "What do Back and Lay mean in a sports exchange?",
     answer:
       "Back means selecting an outcome that you expect to happen. Lay means selecting an outcome that you expect not to happen; a lay selection can involve liability if the outcome does happen. Review the odds, market rules and potential liability before making a selection.",
+  },
+  {
+    question: "Which sports categories are shown?",
+    answer:
+      "The page includes categories such as cricket, football and tennis, along with other sports. Category names and match rows are examples for browsing the interface; they are not confirmation of current fixtures or live markets.",
+  },
+  {
+    question: "How do I browse Fantasy Games, Live Casino and slots?",
+    answer:
+      "Use the homepage sections and navigation links to browse Fantasy Games, Live Casino and slots. The cards illustrate game categories and titles. Availability, rules and terms can vary, so review the information shown for a game before participating.",
   },
   {
     question: "Are the scores and odds shown on the homepage live?",

@@ -11,7 +11,12 @@ import {
   Sparkles,
   Search,
 } from "lucide-react";
-import { siteSEO, generateStructuredData } from "@/config/seo";
+import {
+  siteSEO,
+  generateStructuredData,
+  primaryKeywords,
+  secondaryKeywords,
+} from "@/config/seo";
 
 interface SeoManageModalProps {
   isOpen: boolean;
@@ -226,12 +231,12 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
             <div className="space-y-4">
               <div className="p-4 bg-obsidian-950 rounded-2xl border border-cyan-500/15">
                 <p className="text-xs font-bold text-white mb-3">
-                  Configured Search Engine Ranking Keywords:
+                  Primary keywords
                 </p>
                 <div className="flex flex-wrap gap-2">
-                  {siteSEO.keywords.map((kw, i) => (
+                  {primaryKeywords.map((kw) => (
                     <span
-                      key={i}
+                      key={kw}
                       className="px-2.5 py-1 rounded-lg bg-obsidian-900 border border-cyan-500/30 text-cyan-300 text-xs font-medium"
                     >
                       {kw}
@@ -239,8 +244,25 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
                   ))}
                 </div>
               </div>
+              <div className="p-4 bg-obsidian-950 rounded-2xl border border-cyan-500/15">
+                <p className="text-xs font-bold text-white mb-3">
+                  Secondary and informational keywords
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {secondaryKeywords.map((kw) => (
+                    <span
+                      key={kw}
+                      className="px-2.5 py-1 rounded-lg bg-obsidian-900 border border-emerald-500/20 text-emerald-200 text-xs font-medium"
+                    >
+                      {kw}
+                    </span>
+                  ))}
+                </div>
+              </div>
               <p className="text-[11px] text-slate-400">
-                To customize these keywords for your own domain, simply edit{" "}
+                Keyword metadata is a reference and does not guarantee rankings.
+                Google primarily evaluates useful content, relevance and site
+                quality. Avoid repeating phrases unnaturally. Edit{" "}
                 <code className="text-cyan-400 bg-obsidian-950 px-1 py-0.5 rounded">
                   src/config/seo.ts
                 </code>
