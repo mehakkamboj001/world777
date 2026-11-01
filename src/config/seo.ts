@@ -20,7 +20,7 @@ export const siteSEO: SiteSEOConfig = {
   titleTemplate: "%s | World777",
   description:
     "Explore World777 sports exchange, Fantasy Games, Live Casino and slots. Browse sports categories and Back and Lay guides. Adults 18+ only; play responsibly.",
-  canonicalUrl: "https://www.world777.com.in/",
+  canonicalUrl: "https://world777.store/",
   keywords: [
     "world777",
     "world 777",

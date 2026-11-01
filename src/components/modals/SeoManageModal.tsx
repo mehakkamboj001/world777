@@ -21,6 +21,7 @@ interface SeoManageModalProps {
 export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose }) => {
   const [activeTab, setActiveTab] = useState<"serp" | "og" | "schema" | "keywords" | "routes">("serp");
   const [copied, setCopied] = useState(false);
+  const siteDomain = new URL(siteSEO.canonicalUrl).hostname;
 
   if (!isOpen) return null;
 
@@ -135,7 +136,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
                   <div className="w-4 h-4 rounded-full bg-cyan-600 flex items-center justify-center text-white text-[9px] font-black">
                     W
                   </div>
-                  <span className="font-medium">world777.com.in</span>
+                  <span className="font-medium">{siteDomain}</span>
                   <span>&gt;</span>
                   <span>exchange</span>
                 </div>
@@ -206,7 +207,7 @@ export const SeoManageModal: React.FC<SeoManageModalProps> = ({ isOpen, onClose 
                   </div>
                   <div className="p-3 bg-obsidian-950">
                     <span className="text-[10px] text-slate-500 uppercase tracking-wider block">
-                      world777.com.in
+                      {siteDomain}
                     </span>
                     <h5 className="text-xs font-bold text-white mt-0.5">
                       {siteSEO.defaultTitle}
