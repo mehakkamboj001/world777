@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Lock, PhoneCall, Send, Sparkles } from "lucide-react";
 import { siteSEO } from "@/config/seo";
-import { BrandMark } from "@/components/BrandMark";
 
 interface FooterProps {
   onOpenLogin: () => void;
@@ -60,11 +60,14 @@ export const Footer: React.FC<FooterProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand & Mission */}
         <div className="space-y-3">
-          <div className="flex items-center space-x-2">
-            <BrandMark className="h-8 w-8 rounded-lg" />
-            <span className="text-lg font-black text-white tracking-wider">
-              WORLD<span className="brand-gradient-text">777</span>
-            </span>
+          <div className="flex items-center">
+            <Image
+              src="/images/world777-logo.png"
+              alt="World777"
+              width={180}
+              height={98}
+              className="h-16 w-auto max-w-full object-contain"
+            />
           </div>
           <p className="text-xs text-slate-400 leading-relaxed font-medium">
             Explore sports exchange markets, Fantasy Games, Live Casino and slots

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 import {
   PhoneCall,
   Menu,
@@ -10,7 +11,6 @@ import {
   ExternalLink,
 } from "lucide-react";
 import { siteSEO } from "@/config/seo";
-import { BrandMark } from "@/components/BrandMark";
 
 interface HeaderProps {
   onOpenLogin: () => void;
@@ -79,19 +79,17 @@ export const Header: React.FC<HeaderProps> = ({
       </div>
 
       {/* Main navigation row */}
-      <div className="max-w-[1440px] mx-auto px-3 sm:px-5 h-14 flex items-center justify-between gap-3">
+      <div className="max-w-[1440px] mx-auto px-3 sm:px-5 h-[76px] flex items-center justify-between gap-3">
         {/* Brand Logo */}
         <div className="flex items-center space-x-3">
-          <a href="/" className="flex items-center space-x-2.5 group">
-            <BrandMark className="h-10 w-10 transition-transform group-hover:scale-105" />
-            <div className="flex flex-col">
-              <span className="text-xl sm:text-2xl font-extrabold tracking-wider text-white flex items-center">
-                WORLD<span className="brand-gradient-text ml-1">777</span>
-              </span>
-              <span className="text-[9px] uppercase tracking-widest text-cyan-400/90 font-bold -mt-1 hidden sm:block">
-                Exchange & Live Casino
-              </span>
-            </div>
+          <a href="/" className="flex items-center group" aria-label="World777 home">
+            <Image
+              src="/images/world777-logo.png"
+              alt="World777"
+              width={190}
+              height={104}
+              className="h-[68px] w-auto max-w-[42vw] object-contain transition-transform group-hover:scale-[1.03]"
+            />
           </a>
         </div>
 
